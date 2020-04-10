@@ -6,30 +6,30 @@
   <body>
     <main class="container">
       <section class="about">
-        <a href="/"><img src="{{ "/assets/portfolio.png" | relative_url }}" alt="{{ site.plainwhite.name }}"></a>
+        <a href="/"><img src="{{ "/assets/profile.png" | relative_url }}" alt="{{ site.plainwhite.name }}"></a>
         <h2 id="title">
           <a href="/">{{ site.plainwhite.name }}</a>
         </h2>
         <p class="tagline">{{ site.plainwhite.tagline }}</p>
         <ul class="social">
-          {%- if site.plainwhite.social_links.github -%}
-            <a href="https://github.com/{{ site.plainwhite.social_links.github }}">
+		  {%- if site.plainwhite.social_links.mySite -%}
+		  <a href="http://{{ site.plainwhite.social_links.mySite }}.com" target="_blank">
+		    <li>
+		      <i class="icon-home"></i>
+		    </li>
+		  </a>
+		  {%- endif -%}
+          {%- if site.plainwhite.social_links.instagram -%}
+            <a href="https://instagram.com/{{ site.plainwhite.social_links.instagram }}" target="_blank">
               <li>
-                <i class="icon-github-circled"></i>
+                <i class="icon-instagram"></i>
               </li>
             </a>
           {%- endif -%}
-          {%- if site.plainwhite.social_links.linkedIn -%}
-            <a href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedIn }}">
+          {%- if site.plainwhite.social_links.behance -%}
+            <a href="https://behance.net/{{ site.plainwhite.social_links.behance }}" target="_blank">
               <li>
-                <i class="icon-linkedin-squared"></i>
-              </li>
-            </a>
-          {%- endif -%}
-          {%- if site.plainwhite.social_links.twitter -%}
-            <a href="https://twitter.com/{{ site.plainwhite.social_links.twitter }}">
-              <li>
-                <i class="icon-twitter-squared"></i>
+                <i class="icon-behance"></i>
               </li>
             </a>
           {%- endif -%}

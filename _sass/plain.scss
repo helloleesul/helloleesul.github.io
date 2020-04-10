@@ -2,7 +2,7 @@
 @import "ext/normalize";
 @import "syntax";
 
-$linkColor: #0a59b0;
+$linkColor: #BDBEE5;
 $mobileW: 768px;
 $smallMobileW: 480px;
 $bigScreenW: 1600px;
@@ -102,7 +102,7 @@ main {
       line-height: normal;
     }
     img {
-      max-width: 150px;
+      max-width: 200px;
     }
   }
 }
