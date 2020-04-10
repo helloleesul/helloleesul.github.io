@@ -64,7 +64,7 @@ a:active, a:hover { outline: 0; }
 
 abbr[title] { border-bottom: 1px dotted; }
 
-b, strong { font-weight: bold; }
+b, strong { font-weight: 900; }
 
 dfn { font-style: italic; }
 
@@ -354,7 +354,7 @@ pre.highlight, code { font-family: 'Consolas', Menlo, monospace; line-height: 1.
 
 *, *:before, *:after { box-sizing: border-box; }
 
-body { font-family: "Raleway", sans-serif; font-size: 16px; line-height: 1.2em; margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: "Raleway", "NanumSquare", sans-serif; font-size: 16px; line-height: 1.2em; margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 img, embed, object, video { max-width: 100%; }
 
@@ -378,9 +378,9 @@ main { margin: 0 90px; display: flex; height: 100%; }
 
 @media screen and (min-width: 769px) { main .content { max-width: calc(100% - 220px); margin-left: 220px; width: 100%; } }
 
-main .about { display: flex; height: 100vh; padding-bottom: 15vh; min-width: 220px; justify-content: center; flex-direction: column; align-items: center; }
+main .about { display: flex; height: 100vh; min-width: 220px; justify-content: center; flex-direction: column; align-items: center; }
 
-@media screen and (max-width: 768px) { main .about { height: auto; padding: 10vh 0; } }
+@media screen and (max-width: 768px) { main .about { height: auto; padding: 5vh 0; } }
 
 @media screen and (min-width: 769px) { main .about { position: fixed; } }
 
@@ -404,7 +404,7 @@ main .about img { max-width: 200px; }
 
 .navigation ul li:last-child a { border-bottom: 0; }
 
-.navigation ul a { display: block; font-family: 'Merriweather'; text-align: center; padding: 1rem 0; text-decoration: none; border-bottom: 1px solid #ececec; }
+.navigation ul a { display: block; font-family: "Raleway", "NanumSquare"; text-align: center; padding: 1rem 0; text-decoration: none; border-bottom: 1px solid #ececec; }
 
 @media screen and (max-width: 768px) { .navigation ul a { padding: 2rem 0; } }
 
@@ -412,7 +412,7 @@ main .about img { max-width: 200px; }
 
 .post-categories { list-style-type: none; margin: 0; padding: 0; }
 
-.post-categories li { font-size: 14px; float: left; background-color: #e3e3e3; padding: 5px 20px; border-radius: 2px; margin-right: 10px; margin-bottom: 10px; }
+.post-categories li { font-size: 14px; float: left; background-color: #BDBEE5; font-weight: 900; padding: 5px 20px; border-radius: 100px; color: #fff; letter-spacing: .1em; margin-right: 10px; margin-bottom: 10px; }
 
 @media screen and (max-width: 768px) { .post-categories li { margin-top: 5px; } }
 
@@ -435,13 +435,13 @@ main .about img { max-width: 200px; }
 
 .post-container { padding-left: 30px; }
 
-.post { font-family: "Merriweather", sans-serif; font-weight: 300; color: #222; line-height: 1.9em; }
+.post { font-family: "Raleway", "NanumSquare", sans-serif; color: #222; line-height: 1.9em; text-align: justify; }
 
-.post a { color: #BDBEE5; text-decoration: none; transition: border-bottom 0.4s; }
+.post a { color: #BDBEE5; text-decoration: none; font-weight: 900; transition: border-bottom 0.4s; }
 
 .post a:hover { border-bottom: 0.5px solid #BDBEE5; }
 
-.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 { font-family: Raleway, sans-serif; }
+.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 { font-family: "Raleway", "NanumSquare", sans-serif; }
 
 #posts-label { border-bottom: 1px solid #eee; font-size: 15px; color: #777; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 10px; font-weight: normal; }
 

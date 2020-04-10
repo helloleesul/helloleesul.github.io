@@ -16,11 +16,6 @@ plainwhite:
   tagline: Web publisher.
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml contents
-  navigation:
-    - title: My Work
-      url: "/my-work"
-    - title: Resume
-      url: "/resume"
 
   # generate social links in footer
   social_links:
