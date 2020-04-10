@@ -2,7 +2,7 @@
 layout: post
 categories: Diary
 ---
-오늘 **깃헙 블로그**를 처음 만들었다.
+오늘 **깃헙 블로그**를 처음 만들었다!
 
 ```javascript
 console.log('Hello');
