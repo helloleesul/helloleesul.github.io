@@ -1,4 +1,4 @@
-title: Your awesome title
+title: wow
 author: GitHub User
 email: your-email@domain.com
 description: > # this means to ignore newlines until "show_exerpts:"
@@ -54,3 +54,6 @@ theme: plainwhite
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://helloleesul.github.io/" # the base hostname & protocol for your site
