@@ -22,6 +22,11 @@
 		  $(`.tag`).removeClass('selected');
 		  $(`.tag[data-tag=${tagName}]`).addClass('selected');
 		}
+		
+		$('.all').click(function(){
+			$('.tag').removeClass('selected');
+			$('.post-wrapper').removeClass('hidden');
+		});
 	});
 </script>
 
@@ -74,7 +79,7 @@
 		<li>
 			<div class="tags">
 				<i class="icon-tag"></i>
-				<span class="all"><a href="/">All</a></span>
+				<span class="all tag">All</span>
 				
 				<span class="tag" data-tag="github">
 			    Github

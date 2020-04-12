@@ -20,6 +20,11 @@
 		  $(`.tag`).removeClass('selected');
 		  $(`.tag[data-tag=${tagName}]`).addClass('selected');
 		}
+		
+		$('.all').click(function(){
+			$('.tag').removeClass('selected');
+			$('.post-wrapper').removeClass('hidden');
+		});
 	});
 </script>
 

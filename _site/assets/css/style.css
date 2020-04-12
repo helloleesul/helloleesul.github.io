@@ -423,15 +423,13 @@ main .about img { max-width: 200px; }
 
 .tags { font-size: 0; padding: 10px 0; }
 
-.tags i { font-size: 20px; vertical-align: sub; color: #FCB9CA; margin-right: 5px; }
+.tags i { font-size: 20px; vertical-align: sub; color: #ddd; margin-right: 5px; }
 
 .tags span { font-size: 14px; background: #BDBEE5; color: #fff; font-weight: 900; letter-spacing: .1em; border-radius: 100px; margin-right: 10px; margin-bottom: 10px; padding: 5px 20px; display: inline-block; }
 
 @media screen and (max-width: 768px) { .tags span { margin-right: 5px; margin-bottom: 5px; } }
 
-.tags .all { background: none; padding: 0; }
-
-.tags .all a { background: #FCB9CA; color: #fff; text-decoration: none; padding: 5px 20px; border-radius: 100px; display: inline-block; }
+.tags .all { background: #FCB9CA; }
 
 .tag { opacity: .5; cursor: pointer; transition: all .2s ease-in-out; }
 

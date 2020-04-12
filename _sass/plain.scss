@@ -188,7 +188,7 @@ main {
 	i {
 		font-size: 20px;
 		vertical-align: sub;
-		color: #FCB9CA;
+		color: #ddd;
 		margin-right: 5px;
 	}
 	span {
@@ -208,16 +208,7 @@ main {
 	    }
 	}
 	.all {
-		background: none;
-		padding: 0;
-		a {
-			background: #FCB9CA;
-			color: #fff;
-			text-decoration: none;
-			padding: 5px 20px;
-			border-radius: 100px;
-			display: inline-block;
-		}
+		background: #FCB9CA;
 	}
 }
 
