@@ -1,20 +1,20 @@
 @charset "UTF-8";
-@font-face { font-family: 'fontello'; src: url("../font/fontello.eot?41200404"); src: url("../font/fontello.eot?41200404#iefix") format("embedded-opentype"), url("../font/fontello.woff2?41200404") format("woff2"), url("../font/fontello.woff?41200404") format("woff"), url("../font/fontello.ttf?41200404") format("truetype"), url("../font/fontello.svg?41200404#fontello") format("svg"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'fontello'; src: url("../font/fontello.eot?15916441"); src: url("../font/fontello.eot?15916441#iefix") format("embedded-opentype"), url("../font/fontello.woff2?15916441") format("woff2"), url("../font/fontello.woff?15916441") format("woff"), url("../font/fontello.ttf?15916441") format("truetype"), url("../font/fontello.svg?15916441#fontello") format("svg"); font-weight: normal; font-style: normal; }
 
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/* @media screen and (-webkit-min-device-pixel-ratio:0) { @font-face { font-family: 'fontello'; src: url('../font/fontello.svg?41200404#fontello') format('svg'); } } */
+/* @media screen and (-webkit-min-device-pixel-ratio:0) { @font-face { font-family: 'fontello'; src: url('../font/fontello.svg?15916441#fontello') format('svg'); } } */
 [class^="icon-"]:before, [class*=" icon-"]:before { font-family: "fontello"; font-style: normal; font-weight: normal; speak: none; display: inline-block; text-decoration: inherit; width: 1em; margin-right: .2em; text-align: center; /* opacity: .8; */ /* For safety - reset parent styles, that can break glyph codes*/ font-variant: normal; text-transform: none; /* fix buttons height, for twitter bootstrap */ line-height: 1em; /* Animation center compensation - margins should be symmetric */ /* remove if not needed */ margin-left: .2em; /* you can be more comfortable with increased icons size */ /* font-size: 120%; */ /* Font smoothing. That was taken from TWBS */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* Uncomment for 3D effect */ /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
 
 .icon-flickr:before { content: '\e800'; }
 
 /* '' */
-.icon-calendar:before { content: '\e801'; }
-
-/* '' */
 .icon-home:before { content: '\e802'; }
 
 /* '' */
+.icon-tag:before { content: '\e805'; }
+
+/* '' */
 .icon-twitter:before { content: '\f099'; }
 
 /* '' */
@@ -27,6 +27,9 @@
 .icon-linkedin:before { content: '\f0e1'; }
 
 /* '' */
+.icon-calendar:before { content: '\f133'; }
+
+/* '' */
 .icon-youtube-play:before { content: '\f16a'; }
 
 /* '' */
@@ -380,7 +383,7 @@ main { margin: 0 90px; display: flex; height: 100%; }
 
 main .about { display: flex; height: 100vh; min-width: 220px; justify-content: center; flex-direction: column; align-items: center; }
 
-@media screen and (max-width: 768px) { main .about { height: auto; padding: 5vh 0; } }
+@media screen and (max-width: 768px) { main .about { height: auto; padding: 5vh 0 2vh; } }
 
 @media screen and (min-width: 769px) { main .about { position: fixed; } }
 
@@ -396,7 +399,7 @@ main .about img { max-width: 200px; }
 
 .social li { float: left; }
 
-.social li i { font-size: 34px; }
+.social li i { font-size: 30px; }
 
 .navigation { width: 80%; }
 
@@ -408,13 +411,31 @@ main .about img { max-width: 200px; }
 
 @media screen and (max-width: 768px) { .navigation ul a { padding: 2rem 0; } }
 
-.post-wrapper { border-bottom: 1px solid #ececec; margin-bottom: 1rem; padding-bottom: 1rem; }
+.post-wrapper { border-bottom: 1px solid #ececec; margin-bottom: 1rem; }
 
-.post-categories { list-style-type: none; margin: 0; padding: 0; }
+.post-tags { list-style-type: none; margin: 0; padding: 0; display: inline; }
 
-.post-categories li { font-size: 14px; float: left; background-color: #BDBEE5; font-weight: 900; padding: 5px 20px; border-radius: 100px; color: #fff; letter-spacing: .1em; margin-right: 10px; margin-bottom: 10px; }
+.post-tags li { font-size: 14px; float: left; background-color: #BDBEE5; font-weight: 900; padding: 5px 20px; border-radius: 100px; color: #fff; letter-spacing: .1em; margin-right: 10px; margin-bottom: 10px; }
 
-@media screen and (max-width: 768px) { .post-categories li { margin-top: 5px; } }
+@media screen and (max-width: 768px) { .post-tags li { margin-top: 5px; } }
+
+.hidden { display: none; }
+
+.tags { font-size: 0; padding: 10px 0; }
+
+.tags i { font-size: 20px; vertical-align: sub; color: #FCB9CA; margin-right: 5px; }
+
+.tags span { font-size: 14px; background: #BDBEE5; color: #fff; font-weight: 900; letter-spacing: .1em; border-radius: 100px; margin-right: 10px; margin-bottom: 10px; padding: 5px 20px; display: inline-block; }
+
+@media screen and (max-width: 768px) { .tags span { margin-right: 5px; margin-bottom: 5px; } }
+
+.tags .all { background: none; padding: 0; }
+
+.tags .all a { background: #FCB9CA; color: #fff; text-decoration: none; padding: 5px 20px; border-radius: 100px; display: inline-block; }
+
+.tag { opacity: .5; cursor: pointer; transition: all .2s ease-in-out; }
+
+.tag:hover, .tag.selected { opacity: 1; }
 
 .post-date { margin-right: 10px; color: #555; min-width: 150px; }
 

@@ -12,6 +12,9 @@ url: "https://helloleesul.github.io/" # the base hostname & protocol for your si
 sass:
   sass_dir: _sass
 plainwhite:
+  # navigation:
+    # - title: Diary
+      # url: "/diary"
   name: sul lee
   tagline: Web publisher.
   date_format: "%b %-d, %Y"

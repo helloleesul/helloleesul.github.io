@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: Diary
+tags: [github, jekyll]
 ---
 오늘 **깃헙 블로그**를 처음 만들었다!
 
