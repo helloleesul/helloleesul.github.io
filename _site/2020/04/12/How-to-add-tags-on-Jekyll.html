@@ -35,11 +35,11 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" />
 <link rel="stylesheet" href="/assets/css/style.css">
 
-<title>How to add tags on jekyll</title>
+<title>How to add tags on jekyll 🏷️</title>
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>How to add tags on jekyll | Sul’s Coding Diary</title>
+<title>How to add tags on jekyll 🏷️ | Sul’s Coding Diary</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="How to add tags on jekyll" />
+<meta property="og:title" content="How to add tags on jekyll 🏷️" />
 <meta name="author" content="sul lee" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="포스트에 태그 기능을 추가해보기로 했다!" />
@@ -50,7 +50,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-12T00:00:00+09:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2020/04/12/How-to-add-tags-on-Jekyll.html","headline":"How to add tags on jekyll","dateModified":"2020-04-12T00:00:00+09:00","datePublished":"2020-04-12T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/12/How-to-add-tags-on-Jekyll.html"},"author":{"@type":"Person","name":"sul lee"},"description":"포스트에 태그 기능을 추가해보기로 했다!","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/2020/04/12/How-to-add-tags-on-Jekyll.html","headline":"How to add tags on jekyll 🏷️","dateModified":"2020-04-12T00:00:00+09:00","datePublished":"2020-04-12T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/12/How-to-add-tags-on-Jekyll.html"},"author":{"@type":"Person","name":"sul lee"},"description":"포스트에 태그 기능을 추가해보기로 했다!","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 </head>
   <body>
@@ -78,7 +78,7 @@
       <section class="content">
         <div class="post-container">
   <a class="post-link" href="/2020/04/12/How-to-add-tags-on-Jekyll.html">
-    <h2 class="post-title">How to add tags on jekyll</h2>
+    <h2 class="post-title">How to add tags on jekyll 🏷️</h2>
   </a>
   <div class="post-meta">
 	  <div class="post-bubbles">
@@ -130,7 +130,22 @@
 <span class="nn">---</span>
 </code></pre></div></div>
 
-<p>이렇게 적혀있는데 _layout 폴더에 home.html 파일을 가리킨다.</p>
+<p>달랑 이렇게만 적혀있는데 _layout 폴더에 home.html 파일을 레이아웃으로 설정하고 있다는 뜻이다. 이런 식으로 각 파일마다 레이아웃을 선언하고 있으며 태그, 카테고리, 댓글 등 많은 기능을 선언하여 설정할 수 있다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">github</span><span class="pi">,</span> <span class="nv">jekyll</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>현재 포스트는 _posts 폴더안에 2020-04-12-제목.md로 생성하였고, post.html 파일을 레이아웃으로 설정해두었으며 태그는 github, jekyll 이라고 선언하였다. 하지만 이렇게 태그를 선언하여도 설정한 레이아웃 파일을 수정하여 태그를 보이게 따로 처리해야한다. 위에 적힌대로 post.html 파일로 이동하여 살펴보자.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>지금 보이는 포스트 페이지의 레이아웃은 default.html으로 설정하였다는 뜻이다. 레이아웃은 나중에 보기로 하고</p>
 
 
   </div><div id="disqus_thread" style="margin-top:25px"></div>

@@ -1,0 +1,151 @@
+I"E;<p>포스트에 <strong>태그 기능</strong>을 추가해보기로 했다!</p>
+
+<p>현재 이 블로그를 설명하자면 깃헙 레파지토리를 생성해서 <a href="https://jekyllrb-ko.github.io/">jekyll</a> 테마를 적용한것인데, 나는 <a href="http://jekyllthemes.org/">jekyll theme</a> 중에서 <a href="https://github.com/thelehhman/plainwhite-jekyll">plainwhite</a>으로 설정하였고 계속해서 커스터마이징하고있다.<br />
+태그기능을 추가하는 방법을 기록하기 전에 이 블로그의 디렉토리 구조를 대략 보자면 이러하다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:4000
+	index.md
+	_assets
+		img
+		js
+		font
+		css
+	_site
+	_sass
+	_posts
+	_layouts
+		post.html
+		page.html
+		home.html
+		default.html
+	_includes
+		head.html
+	_config.yml
+</code></pre></div></div>
+
+<p>제일 눈여겨봐야할 폴더인 _layout은 말 그대로 페이지 레이아웃을 담당하고있다. 최상단 파일인 index.md에는</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">home</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>달랑 이렇게만 적혀있는데 _layout 폴더에 home.html 파일을 레이아웃으로 설정하고 있다는 뜻이다. 이런 식으로 각 파일마다 레이아웃을 선언하고 있으며 태그, 카테고리, 댓글 등 많은 기능을 선언하여 설정할 수 있다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">github</span><span class="pi">,</span> <span class="nv">jekyll</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>현재 포스트는 _posts 폴더안에 2020-04-12-제목.md로 생성하였고, post.html 파일을 레이아웃으로 설정해두었으며 태그는 github, jekyll 이라고 선언하였다. 위에 적힌대로 post.html 파일로 이동하여 살펴보자.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+<span class="nn">---</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"post-link"</span> <span class="na">href=</span><span class="s">"/2020/04/12/How-to-add-tags-on-Jekyll.html"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"post-title"</span><span class="nt">&gt;</span>How to add tags on jekyll<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-meta"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-bubbles"</span><span class="nt">&gt;</span>
+	    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"post-tags"</span><span class="nt">&gt;</span>
+	        
+				
+					
+						<span class="nt">&lt;li&gt;</span>Github<span class="nt">&lt;/li&gt;</span>
+					
+				
+					
+						<span class="nt">&lt;li&gt;</span>Jekyll<span class="nt">&lt;/li&gt;</span>
+					
+				
+			
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-date"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon-calendar"</span><span class="nt">&gt;&lt;/i&gt;</span>2020-04-12 00:00:00 +0900<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"post-link"</span> <span class="na">href=</span><span class="s">"/2020/04/10/welcome.html"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"post-title"</span><span class="nt">&gt;</span>Welcome 👋<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-meta"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-bubbles"</span><span class="nt">&gt;</span>
+	    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"post-tags"</span><span class="nt">&gt;</span>
+	        
+				
+					
+						<span class="nt">&lt;li&gt;</span>Github<span class="nt">&lt;/li&gt;</span>
+					
+				
+					
+						<span class="nt">&lt;li&gt;</span>Jekyll<span class="nt">&lt;/li&gt;</span>
+					
+				
+			
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-date"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon-calendar"</span><span class="nt">&gt;&lt;/i&gt;</span>Apr 10, 2020<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>오늘 <span class="nt">&lt;strong&gt;</span>깃헙 블로그<span class="nt">&lt;/strong&gt;</span>를 처음 만들었다!<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"language-javascript highlighter-rouge"</span><span class="nt">&gt;&lt;div</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;&lt;pre</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;&lt;code&gt;&lt;span</span> <span class="na">class=</span><span class="s">"nx"</span><span class="nt">&gt;</span>console<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"p"</span><span class="nt">&gt;</span>.<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"nx"</span><span class="nt">&gt;</span>log<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"p"</span><span class="nt">&gt;</span>(<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"dl"</span><span class="nt">&gt;</span>'<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"s1"</span><span class="nt">&gt;</span>Hello<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"dl"</span><span class="nt">&gt;</span>'<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"p"</span><span class="nt">&gt;</span>);<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>코딩을 공부하면서 어떤 결과가 나올지 궁금하거나 따라해보고싶은 작업이 꽤 많이 생기는데 (여전히) 테스트로 한 페이지씩 만들어보고 난 뒤 종종 다시 열어보기 시작했다. 그러던 중 비슷한 이름의 코딩 파일들이 늘어나면서 보기가 불편해졌다.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>혼자 끙끙거리다 얻어낸 성취감이 이대로 사라지는 것이 아쉬워 생각이 나면 곧바로 찾아보기 편했으면 했고, 이 코드를 왜 만들어봤는지 그리고 어떤 결과를 얻고 배웠는지 설명도 덧붙이고 싶었다.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>어쩌다 코딩을 접하고 어찌됐든 퍼블리셔가 된 나는 어떻게 계속 공부하고 성장해가는지를 기록하고 싶었다. 처음에는 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://codepen.io/"</span><span class="nt">&gt;</span>codepen<span class="nt">&lt;/a&gt;</span>을 이용하려했으나 더 멋지고 눈돌아가는 다른 작업물을 보느라 바빴고 해보고싶은 코딩만 늘어났기 때문에 부적합하다는 결론이 나왔다.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>이후에는 무작정 부트스트랩으로 블로그 사이트 만들면 되겠거니 했지만 깔끔한 디자인의 템플릿을 구한 다음엔 어떻게 접근해야할지 감이 전혀 오지 않았다.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>그러다 다른 사람들은 어떤 블로그를 쓸까? 개발자도 자기가 보려고 직접 만들어서 쓰려나?하는 의문이 들었고 구글에 <span class="nt">&lt;strong&gt;</span>개발자 블로그 사이트<span class="nt">&lt;/strong&gt;</span>라고 검색하여 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://cheese10yun.github.io/blog-start/"</span><span class="nt">&gt;</span>이 글<span class="nt">&lt;/a&gt;</span>을 보게 되었다.<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+예전부터 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/"</span><span class="nt">&gt;</span>Github<span class="nt">&lt;/a&gt;</span>는 많이 들어보고 들어가도 봤지만 정확히 모르겠고 지금도 모르는 중이다. 하지만 오늘 이렇게 만들었다.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://zoomkoding.github.io/gitblog/2019/08/15/git-blog-1.html"</span><span class="nt">&gt;</span>차근차근 Github 블로그 만들기<span class="nt">&lt;/a&gt;</span>를 참고하여 따라했으며,<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"language-terminal highlighter-rouge"</span><span class="nt">&gt;&lt;div</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;&lt;pre</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;&lt;code&gt;&lt;span</span> <span class="na">class=</span><span class="s">"gp"</span><span class="nt">&gt;</span>$<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"w"</span><span class="nt">&gt;</span> <span class="nt">&lt;/span&gt;</span>gem <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"nb"</span><span class="nt">&gt;</span>install <span class="nt">&lt;/span&gt;</span>bundler
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"go"</span><span class="nt">&gt;</span>ERROR:  While executing gem ... (Gem::FilePermissionError)
+<span class="nt">&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://whitepaek.tistory.com/3"</span><span class="nt">&gt;</span>Homebrew를 설치<span class="nt">&lt;/a&gt;</span>하고, <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://jojoldu.tistory.com/288"</span><span class="nt">&gt;</span>이 포스팅<span class="nt">&lt;/a&gt;</span>을 참고해 기존의 설치된 Ruby를 업데이트하여 위의 에러를 해결하였고, 지금은 이 글을 적으며 카테고리를 태그로 만들어서 클릭하면 분리하여 볼 수 있었으면 좋겠다고 생각하고있다. 마크다운 문법으로 적고있으며 (처음 써보고 있다) jekyll 테마를 조금씩 바꿔가면서 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://fontello.com/"</span><span class="nt">&gt;</span>fontello<span class="nt">&lt;/a&gt;</span>도 알게되었다. 앞으로 이 블로그는 꾸준히 업데이트 할 예정이다.<span class="nt">&lt;/p&gt;</span><span class="sb">
+
+
+</span>  <span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span> <span class="na">style=</span><span class="s">"margin-top:25px"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/2020/04/10/welcome.html';
+      this.page.identifier = 'http://localhost:4000/2020/04/10/welcome.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://helloleesul.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;noscript&gt;</span>Please enable JavaScript to view the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://disqus.com/?ref_noscript"</span> <span class="na">rel=</span><span class="s">"nofollow"</span><span class="nt">&gt;</span>comments
+      powered by Disqus.<span class="nt">&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</span>
+
+  <span class="nt">&lt;/div&gt;&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span> <span class="na">style=</span><span class="s">"margin-top:25px"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/2020/04/12/How-to-add-tags-on-Jekyll.html';
+      this.page.identifier = 'http://localhost:4000/2020/04/12/How-to-add-tags-on-Jekyll.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://helloleesul.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;noscript&gt;</span>Please enable JavaScript to view the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://disqus.com/?ref_noscript"</span> <span class="na">rel=</span><span class="s">"nofollow"</span><span class="nt">&gt;</span>comments
+      powered by Disqus.<span class="nt">&lt;/a&gt;&lt;/noscript&gt;&lt;/div&gt;</span>
+
+</code></pre></div></div>
+
+<p>지금 보이는 포스트 페이지의 레이아웃은 default.html으로 설정하였다는 뜻이다. 레이아웃은 나중에 보기로 하고</p>
+
+:ET

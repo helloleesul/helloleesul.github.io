@@ -435,7 +435,7 @@ main .about img { max-width: 200px; }
 
 .tag:hover, .tag.selected { opacity: 1; }
 
-.post-date { margin-right: 10px; color: #555; min-width: 150px; }
+.post-date { color: #555; }
 
 .post-meta { display: flex; justify-content: space-between; align-items: center; }
 
