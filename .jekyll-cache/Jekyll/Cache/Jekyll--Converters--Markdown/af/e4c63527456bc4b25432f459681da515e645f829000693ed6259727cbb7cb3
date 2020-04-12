@@ -1,0 +1,23 @@
+I":<p>포스트에 <strong>태그 기능</strong>을 추가해보기로 했다!</p>
+
+<p>기능을 추가하기 전에 블로그의 구조를 대략 기록해보자면 이러하다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:4000
+Lindex.md
+L_assets
+L_site
+L_sass
+L_posts
+L_layouts
+L_includes
+L_config.yml
+</code></pre></div></div>
+
+<p>현재 이 블로그는 <a href="http://jekyllthemes.org/">jekyll theme</a> 중에서 <a href="https://github.com/thelehhman/plainwhite-jekyll">plainwhite</a>으로 설정하였고 계속해서 커스터마이징하고있다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">github</span><span class="pi">,</span> <span class="nv">jekyll</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+:ET
