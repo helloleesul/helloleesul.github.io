@@ -3,6 +3,25 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <script src="/assets/js/jquery-3.5.0.min.js"></script>
+<script>
+	$(function(){
+		$("[data-tag]").click((e) => {
+		  currentTag = e.target.dataset.tag;
+		  filterByTagName(currentTag);
+		})
+		
+		function filterByTagName(tagName) {
+		  $('.hidden').removeClass('hidden');
+		  $('.post-wrapper').each((index, elem) => {
+		    if (!elem.hasAttribute(`data-${tagName}`)) {
+		      $(elem).addClass('hidden');
+		    }
+		  });
+		  $(`.tag`).removeClass('selected');
+		  $(`.tag[data-tag=${tagName}]`).addClass('selected');
+		}
+	});
+</script>
 
 <link rel="shortcut icon" href="/assets/favicon.png" type="image/png" sizes="180x180" />
 <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet" />
