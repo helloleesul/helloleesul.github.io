@@ -15,6 +15,7 @@ plainwhite:
   # navigation:
     # - title: Diary
       # url: "/diary"
+  disqus_shortname: helloleesul
   name: sul lee
   tagline: Web publisher.
   date_format: "%b %-d, %Y"
