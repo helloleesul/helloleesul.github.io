@@ -74,11 +74,11 @@ layout: default
 
 이제 포스트 목록이 보이는 메인화면에서도 이것과 같은 방법으로 태그들을 추가하고, 클릭한 태그가 삽입된 포스트만 보이도록 설정하면 되는데, 정말 운이 좋게도 내가 딱 원하는 기능을 구현하는 법을 간단하고 이해하기 쉽도록 정리해둔 포스팅[^footnote1]이 있어서 천천히 따라해보면 좋을 듯 싶다![^footnote2]
 
-[^footnote1]: 참고사이트: [지그재그님의 개발 블로그]의 [태그기능 추가 포스트]
+[^footnote1]: 참고사이트: [재그지그님의 개발 블로그]의 [태그기능 추가 포스트]
 [^footnote2]: 외부에서 태그 클릭 시 해당 태그로 필터링 된 포스트 목록으로 이동하는 것까지는 구현했으나 다른 태그 클릭 시 쿼리 파라미터를 동적으로 바꿔주는 함수는 이해가 어려워 구현하지 못하였다.. 😢
 
 [jekyll theme]: http://jekyllthemes.org/
 [plainwhite]: https://github.com/thelehhman/plainwhite-jekyll
 [jekyll]: https://jekyllrb-ko.github.io/
-[지그재그님의 개발 블로그]: https://wormwlrm.github.io/
+[재그지그님의 개발 블로그]: https://wormwlrm.github.io/
 [태그기능 추가 포스트]: https://wormwlrm.github.io/2019/09/22/How-to-add-tags-on-Jekyll.html
