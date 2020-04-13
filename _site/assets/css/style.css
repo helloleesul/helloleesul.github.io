@@ -454,7 +454,7 @@ main .about img { max-width: 200px; }
 
 .post-container { padding-left: 30px; }
 
-.post { font-family: "Raleway", "NanumSquare", sans-serif; color: #222; line-height: 1.9em; text-align: justify; }
+.post { font-family: "Raleway", "NanumSquare", sans-serif; color: #222; line-height: 1.9em; }
 
 .post a { color: #BDBEE5; text-decoration: none; font-weight: 900; transition: border-bottom 0.4s; }
 
