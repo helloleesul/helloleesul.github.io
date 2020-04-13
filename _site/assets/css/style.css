@@ -466,4 +466,6 @@ main .about img { max-width: 200px; }
 
 #posts-label { border-bottom: 1px solid #eee; font-size: 15px; color: #777; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 10px; font-weight: normal; }
 
+a.footnote, a.reversefootnote { color: #000; }
+
 /*# sourceMappingURL=style.css.map */

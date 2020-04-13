@@ -1,5 +1,10 @@
 github: Github
+jekyll: Jekyll
 html: HTML
 css: CSS
-jekyll: Jekyll
 jquery: jQuery
+javascript: JavaScript
+book: Book
+blog: Blog
+diary: Diary
+etc: etc

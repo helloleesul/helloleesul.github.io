@@ -14,7 +14,9 @@ comments: true
 	        {% if page.tags %}
 				{% for tag in page.tags %}
 					{% if site.data.tags contains tag %}
-						<li>{{ site.data.format[tag] }}</li>
+<!-- 						<a href="{{ relative_url }}/?tag={{ tag }}"> -->
+							<li>{{ site.data.format[tag] }}</li>
+<!-- 						</a> -->
 					{% endif %}
 				{% endfor %}
 			{% endif %}
