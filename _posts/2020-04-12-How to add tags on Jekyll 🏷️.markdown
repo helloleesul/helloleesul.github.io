@@ -54,6 +54,8 @@ layout: default
 ---
 &lcub;&percnt; if page.tags &percnt;&rcub;
 	&lcub;&percnt; for tag in page.tags &percnt;&rcub;
+	&lcub;&percnt; endfor &percnt;&rcub;
+&lcub;&percnt; endif &percnt;&rcub;
 </code>
 </pre>
 

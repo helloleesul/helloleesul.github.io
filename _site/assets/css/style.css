@@ -355,6 +355,8 @@ div.highlight { padding: 5px 20px; }
 
 pre.highlight, code { font-family: 'Consolas', Menlo, monospace; line-height: 1.4em; tab-size: 4; }
 
+code.highlighter-rouge { background: #F4F4F4; font-weight: 900; }
+
 *, *:before, *:after { box-sizing: border-box; }
 
 body { font-family: "Raleway", "NanumSquare", sans-serif; font-size: 16px; line-height: 1.2em; margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
