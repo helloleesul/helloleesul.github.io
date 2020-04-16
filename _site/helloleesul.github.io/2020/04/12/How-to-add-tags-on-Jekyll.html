@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<script src="/assets/js/jquery-3.5.0.min.js"></script>
+<script>
+	$(function(){
+		$("[data-tag]").click((e) => {
+		  currentTag = e.target.dataset.tag;
+		  filterByTagName(currentTag);
+		})
+		
+		function filterByTagName(tagName) {
+		  $('.hidden').removeClass('hidden');
+		  $('.post-wrapper').each((index, elem) => {
+		    if (!elem.hasAttribute(`data-${tagName}`)) {
+		      $(elem).addClass('hidden');
+		    }
+		  });
+		  $(`.tag`).removeClass('selected');
+		  $(`.tag[data-tag=${tagName}]`).addClass('selected');
+		}
+		
+		$('.all').click(function(){
+			$('.tag').removeClass('selected');
+			$('.post-wrapper').removeClass('hidden');
+		});
+		
+		let currentTag = "";
+		const queryTag = getQuery().tag;
+		if (queryTag) {
+			currentTag = queryTag;
+			filterByTagName(currentTag)
+		}
+		
+		function getQuery() {
+			var params = {};
+		    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+		    return params;
+		}
+		
+/*
+		function updateQueryString(tagName) {
+			const path = `${location.protocol}//${location.host}${location.pathname}?tag=${tagName}`;
+			window.history.replaceState({ path }, '', path);
+		}
+*/
+	});
+</script>
+
+<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/png" sizes="180x180" />
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" />
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<title>How to add tags on jekyll 🏷️</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>How to add tags on jekyll 🏷️ | Sul’s Coding Diary</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="How to add tags on jekyll 🏷️" />
+<meta name="author" content="sul lee" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="포스트에 태그 기능을 추가해보기로 했다!" />
+<meta property="og:description" content="포스트에 태그 기능을 추가해보기로 했다!" />
+<link rel="canonical" href="http://localhost:4000/helloleesul.github.io/2020/04/12/How-to-add-tags-on-Jekyll.html" />
+<meta property="og:url" content="http://localhost:4000/helloleesul.github.io/2020/04/12/How-to-add-tags-on-Jekyll.html" />
+<meta property="og:site_name" content="Sul’s Coding Diary" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-12T00:00:00+09:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/helloleesul.github.io/2020/04/12/How-to-add-tags-on-Jekyll.html","headline":"How to add tags on jekyll 🏷️","dateModified":"2020-04-12T00:00:00+09:00","datePublished":"2020-04-12T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/helloleesul.github.io/2020/04/12/How-to-add-tags-on-Jekyll.html"},"author":{"@type":"Person","name":"sul lee"},"description":"포스트에 태그 기능을 추가해보기로 했다!","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+  <body>
+    <main class="container">
+      <section class="about">
+        <a href="/"><img src="/assets/img/profile.png" alt="sul lee"></a>
+        <h2 id="title">
+          <a href="/">sul lee</a>
+        </h2>
+        <p class="tagline">Web publisher.</p>
+        <ul class="social"><a href="http://leesul.com" target="_blank">
+		    <li>
+		      <i class="icon-home"></i>
+		    </li>
+		  </a><a href="https://instagram.com/littlemissweekend" target="_blank">
+              <li>
+                <i class="icon-instagram"></i>
+              </li>
+            </a><a href="https://behance.net/leesul" target="_blank">
+              <li>
+                <i class="icon-behance"></i>
+              </li>
+            </a></ul><p>&copy; 2020</p>
+      </section>
+      <section class="content">
+        <div class="post-container">
+  <a class="post-link" href="/helloleesul.github.io/2020/04/12/How-to-add-tags-on-Jekyll.html">
+    <h2 class="post-title">How to add tags on jekyll 🏷️</h2>
+  </a>
+  <div class="post-meta">
+	  <div class="post-bubbles">
+	    <ul class="post-tags">
+	        
+				
+					
+<!-- 						<a href="/?tag=jekyll"> -->
+							<li>Jekyll</li>
+<!-- 						</a> -->
+					
+				
+					
+<!-- 						<a href="/?tag=blog"> -->
+							<li>Blog</li>
+<!-- 						</a> -->
+					
+				
+			
+        </ul>
+      </div>
+    <div class="post-date"><i class="icon-calendar"></i>Apr 12, 2020</div>
+  </div>
+  <div class="post">
+    <p>포스트에 <strong>태그 기능</strong>을 추가해보기로 했다!</p>
+
+<p>현재 이 블로그를 설명하자면 깃헙 레파지토리를 생성해서 <a href="https://jekyllrb-ko.github.io/">jekyll</a> 테마를 적용한것인데, 나는 <a href="http://jekyllthemes.org/">jekyll theme</a> 중에서 <a href="https://github.com/thelehhman/plainwhite-jekyll">plainwhite</a>으로 설정하였고 내가 원하는 대로 커스터마이징하고있다. 태그기능을 추가하는 방법을 기록하기 전에 이 블로그의 디렉토리 구조를 대략 보자면 이러하다.</p>
+
+<h3 id="디렉토리-구조"><strong>디렉토리 구조</strong></h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:4000
+	index.md
+	_assets
+		img
+		js
+		font
+		css
+	_site
+	_sass
+	_posts
+	_layouts
+		post.html
+		page.html
+		home.html
+		default.html
+	_includes
+		head.html
+	_config.yml
+</code></pre></div></div>
+
+<p>제일 눈여겨봐야할 폴더인 <code class="highlighter-rouge">_layouts</code>은 말 그대로 레이아웃들을 담당하고있다. 최상단 파일인 <code class="highlighter-rouge">index.md</code>을 살펴보자.</p>
+
+<h3 id="indexmd"><strong>index.md</strong></h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">home</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>달랑 이렇게만 적혀있는데 <code class="highlighter-rouge">_layouts</code> 폴더에 <code class="highlighter-rouge">home.html</code>을 레이아웃으로 설정하고 있다는 뜻이다. 이런 식으로 각 파일마다 설정한 레이아웃을 선언하고 있으며 태그, 카테고리, 댓글 등 많은 기능을 선언하여 설정할 수 있다.</p>
+
+<h3 id="_postsyear-month-day-titlemd"><strong>_posts/year-month-day-title.md</strong></h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">jekyll</span><span class="pi">,</span> <span class="nv">blog</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>이 포스트는 <code class="highlighter-rouge">_posts</code> 폴더 안에 <code class="highlighter-rouge">year-month-day-title.md</code>로 추가하여 만들고 있고, <code class="highlighter-rouge">post.html</code>을 레이아웃으로 설정해두었으며 태그는 <code class="highlighter-rouge">tags</code>라는 변수 안에 배열로 선언하였다. 하지만 이렇게 태그를 선언하여도 바로 보이진 않는다. 설정한 레이아웃 파일을 수정하여 태그를 보이게 따로 처리해야한다. 위에 적힌대로 <code class="highlighter-rouge">post.html</code> 파일로 이동하여 살펴보자.</p>
+
+<h3 id="_layoutsposthtml"><strong>_layouts/post.html</strong></h3>
+<pre class="highlight" style="padding: 0 20px;">
+<code>
+---
+layout: default
+---
+&lt;div class="post-container"&gt;
+	...
+	&lt;ul class="post-tags"&gt;
+		&lcub;&percnt; if page.tags &percnt;&rcub;
+			&lcub;&percnt; for tag in page.tags &percnt;&rcub;
+				&lt;li&gt;&lcub;{ tag }}&lt;/li&gt;
+			&lcub;&percnt; endfor &percnt;&rcub;
+		&lcub;&percnt; endif &percnt;&rcub;
+	&lt;/ul&gt;
+	...
+&lt;/div&gt;
+</code>
+</pre>
+
+<p>포스트 레이아웃 페이지인 <code class="highlighter-rouge">post.html</code>는 <code class="highlighter-rouge">default.html</code>으로 설정하였다는 뜻이고 위와 같은 코드를 삽입하여 <code class="highlighter-rouge">year-month-day-title.md</code>에 적은 태그 선언을 보여주는 것이다. 글로 적어두니 상당히 헷갈리는 부분이지만 사용하는 에디터툴로 하나씩 살펴보면 어렵지않다.</p>
+
+<p>이제 포스트 목록이 보이는 메인화면에서도 이것과 같은 방법으로 태그들을 추가하고, 클릭한 태그가 삽입된 포스트만 보이도록 설정하면 되는데, 정말 감사하게도 내가 딱 원하는 기능을 구현하는 법을 간단하고 이해하기 쉽도록 정리해둔 포스팅<sup id="fnref:footnote1"><a href="#fn:footnote1" class="footnote">1</a></sup>이 있어서 천천히 따라해보면 좋을 듯 싶다!<sup id="fnref:footnote2"><a href="#fn:footnote2" class="footnote">2</a></sup></p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:footnote1">
+      <p><a href="https://wormwlrm.github.io/">재그지그님의 개발 블로그</a>의 <a href="https://wormwlrm.github.io/2019/09/22/How-to-add-tags-on-Jekyll.html">태그기능 추가 포스트</a> <a href="#fnref:footnote1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:footnote2">
+      <p>외부에서 태그 클릭 시 해당 태그로 필터링 된 포스트 목록으로 이동하는 것까지는 구현했으나 다른 태그 클릭 시 쿼리 파라미터를 동적으로 바꿔주는 함수는 이해가 어려워 구현하지 못하였다.. 😢 <a href="#fnref:footnote2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/helloleesul.github.io/2020/04/12/How-to-add-tags-on-Jekyll.html';
+      this.page.identifier = 'http://localhost:4000/helloleesul.github.io/2020/04/12/How-to-add-tags-on-Jekyll.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://helloleesul.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+      </section>
+    </main></body>
+</html>
