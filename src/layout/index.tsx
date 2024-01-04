@@ -51,7 +51,7 @@ export default function Layout({
       <ThemeProvider theme={theme}>
         <Global styles={global} />
         <Container>
-          <Header title={title} />
+          <Header title="leesulog." />
           <main>{children}</main>
           <Footer />
         </Container>

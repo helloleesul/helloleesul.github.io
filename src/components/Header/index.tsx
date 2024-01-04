@@ -1,5 +1,6 @@
 import React from 'react';
-import { HeaderWrapper, Circle, Title } from './styled';
+import { HeaderWrapper, Title } from './styled';
+import { Link } from 'gatsby';
 
 type HeaderProps = {
   title: string;
@@ -9,8 +10,9 @@ export default function Header({ title }: HeaderProps) {
   return (
     <HeaderWrapper>
       <Title>
-        <Circle />
-        <h1>{title}</h1>
+        <h1>
+          <Link to="/">{title}</Link>
+        </h1>
       </Title>
     </HeaderWrapper>
   );
