@@ -1,5 +1,5 @@
-import React from 'react';
-import { HeaderWrapper, Title } from './styled';
+import React, { useState } from 'react';
+import { HeaderWrapper, Title, ThemeSwitch } from './styled';
 import { Link } from 'gatsby';
 
 type HeaderProps = {
@@ -7,13 +7,23 @@ type HeaderProps = {
 };
 
 export default function Header({ title }: HeaderProps) {
+  const [darkMode, setDarkMode] = useState(false);
+  const onThemeSwitch = () => {
+    setDarkMode(mode => !mode);
+  };
   return (
     <HeaderWrapper>
       <Title>
-        <h1>
-          <Link to="/">{title}</Link>
-        </h1>
+        <Link to="/">{title}</Link>
       </Title>
+      <ThemeSwitch onClick={onThemeSwitch}>
+        <div id="mode-bg"></div>
+        <div id="mode-item" className={darkMode ? 'on' : 'off'}>
+          <span id="light">light</span>
+          <span id="dark">dark</span>
+        </div>
+        <input type="checkbox" />
+      </ThemeSwitch>
     </HeaderWrapper>
   );
 }
