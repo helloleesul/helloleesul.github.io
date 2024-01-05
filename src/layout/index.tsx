@@ -7,6 +7,7 @@ import Header from '~/components/Header';
 import theme from '~/styles/theme';
 import global from '~/styles/global';
 import { Container } from '~/styles/common';
+import { DarkModeProvider } from '~/utils/DarkModeContext';
 
 type LayoutProps = {
   title: string;
@@ -50,11 +51,13 @@ export default function Layout({
       </Helmet>
       <ThemeProvider theme={theme}>
         <Global styles={global} />
-        <Container>
-          <Header title="leesulog." />
-          <main>{children}</main>
-          <Footer />
-        </Container>
+        <DarkModeProvider>
+          <Container>
+            <Header title="leesulog." />
+            <main>{children}</main>
+            <Footer />
+          </Container>
+        </DarkModeProvider>
       </ThemeProvider>
     </>
   );

@@ -27,9 +27,15 @@ const global = css`
     cursor: pointer;
   }
 
+  ul,
+  ol,
+  li {
+    list-style: none;
+  }
+
   body.dark {
     --color: ${theme.PALETTE.white};
-    --background: ${theme.PALETTE.gray700};
+    --background: ${theme.PALETTE.gray600};
 
     ::-webkit-scrollbar-track {
       background: ${theme.PALETTE.gray200};
@@ -41,7 +47,7 @@ const global = css`
   }
 
   body.light {
-    --color: ${theme.PALETTE.gray700};
+    --color: ${theme.PALETTE.gray600};
     --background: ${theme.PALETTE.white};
 
     ::-webkit-scrollbar-track {

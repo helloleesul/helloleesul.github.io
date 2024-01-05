@@ -4,7 +4,6 @@ import theme from '~/styles/theme';
 
 export const HeaderWrapper = styled.header`
   padding: 2rem 0;
-  color: ${theme.PALETTE.gray600};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +27,7 @@ export const ThemeSwitch = styled.div`
   border-radius: 2rem;
   overflow: hidden;
   #mode-bg {
-    background-color: ${theme.PALETTE.gray600};
+    background-color: ${theme.PALETTE.gray500};
     width: 4rem;
     height: 2rem;
   }
@@ -48,7 +47,7 @@ export const ThemeSwitch = styled.div`
       transform: translate(0, -50%);
     }
     #dark {
-      background-color: ${theme.PALETTE.gray600};
+      background-color: ${theme.PALETTE.gray500};
       top: 0;
       transform: translate(-1.3rem, -0.3rem) scale(0.3);
     }
