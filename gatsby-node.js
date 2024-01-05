@@ -52,6 +52,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             fields {
               slug
             }
+            frontmatter {
+              title
+            }
           }
         }
       }
@@ -70,21 +73,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     'src/templates/post_template.tsx',
   );
 
+  const articles = queryAllMarkdownData.data.allMarkdownRemark.edges;
+
   // Page Generating Function
-  const generatePostPage = ({
-    node: {
-      fields: { slug },
+  const generatePostPage = (
+    {
+      node: {
+        fields: { slug },
+      },
     },
-  }) => {
+    index,
+  ) => {
     const pageOptions = {
       path: slug,
       component: PostTemplateComponent,
-      context: { slug },
+      context: {
+        slug,
+        prev: index === 0 ? null : articles[index - 1].node,
+        next: index === articles.length - 1 ? null : articles[index + 1].node,
+      },
     };
 
     createPage(pageOptions);
   };
 
   // Generate Post Page And Passing Slug Props for Query
-  queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage);
+  articles.forEach(generatePostPage);
 };
