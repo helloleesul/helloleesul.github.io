@@ -37,4 +37,5 @@ export const CategoryItem = styled.li`
 export const Date = styled.span`
   ${RoundItem}
   font-family: system-ui, sans-serif;
+  margin-right: 1rem;
 `;

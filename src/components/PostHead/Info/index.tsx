@@ -13,12 +13,16 @@ export default function PostHeadInfo({
   title,
   date,
   categories,
+  readingTime,
 }: PostHeadInfoProps) {
   return (
     <PostHeadInfoWrapper>
       <Title>{title}</Title>
       <PostData>
-        <Date>{date}</Date>
+        <div>
+          <Date>{date}</Date>
+          <span>{readingTime}</span>
+        </div>
         <Category>
           {categories.map(category => (
             <CategoryItem key={category}>{category}</CategoryItem>

@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `leesulog`,
     description: `주니어 개발자로서의 저를 표현한 블로그입니다.`,
-    author: `Hyun`,
+    author: `leesul`,
     siteUrl: 'https://my-website-link.com',
   },
   plugins: [
@@ -83,6 +83,10 @@ module.exports = {
               target: '_blank',
               rel: 'nofollow',
             },
+          },
+          {
+            resolve: 'gatsby-remark-reading-time',
+            options: {},
           },
         ],
       },
