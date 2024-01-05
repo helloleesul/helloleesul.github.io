@@ -27,7 +27,6 @@ export default function PostItem({
   },
   link,
 }: PostItemProps) {
-  console.log(date);
   return (
     <PostItemWrapper to={link}>
       <PostItemContent>
