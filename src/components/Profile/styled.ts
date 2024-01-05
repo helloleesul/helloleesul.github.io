@@ -6,8 +6,7 @@ export const Wrapper = styled.div`
   border-radius: 1rem;
   display: flex;
   gap: 2rem;
-  padding: 20px;
-  // box-shadow: 0px 0px 15px -5px ${theme.PALETTE.gray300};
+  padding: 20px 0;
 `;
 
 export const Title = styled.p`

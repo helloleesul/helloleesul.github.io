@@ -6,11 +6,19 @@ import Layout from '~/layout';
 import PostHead from '~/components/PostHead';
 import PostContent from '~/components/PostContent';
 import Comment from '~/components/Comment';
+import Profile from '~/components/Profile';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 type PostTemplateProps = {
   data: {
     allMarkdownRemark: {
       edges: PostPageItemType[];
+    };
+    file: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
+      publicURL: string;
     };
   };
   location: {
@@ -28,6 +36,7 @@ export type PostPageItemType = {
 export default function PostTemplate({
   data: {
     allMarkdownRemark: { edges },
+    file,
   },
   location: { href },
 }: PostTemplateProps) {
@@ -56,6 +65,7 @@ export default function PostTemplate({
         thumbnail={gatsbyImageData}
       />
       <PostContent html={html} />
+      <Profile profileImage={file?.childImageSharp?.gatsbyImageData} />
       <Comment />
     </Layout>
   );
@@ -81,6 +91,12 @@ export const queryMarkdownDataBySlug = graphql`
           }
         }
       }
+    }
+    file(name: { eq: "profile-image" }) {
+      childImageSharp {
+        gatsbyImageData(width: 120, height: 120)
+      }
+      publicURL
     }
   }
 `;
