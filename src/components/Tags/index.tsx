@@ -12,7 +12,7 @@ export default function Tags({ selectedCategory, categoryList }: TagListProps) {
           key={name}
         >
           {name}
-          <span>({count})</span>
+          <span>{name === selectedCategory && `(${count})`}</span>
         </TagItem>
       ))}
     </TagListWrapper>
