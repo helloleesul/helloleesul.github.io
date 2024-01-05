@@ -1,8 +1,10 @@
 import styled from '@emotion/styled';
-import { TABLET } from '~/styles/common';
+import theme from '~/styles/theme';
 
 export const CommentWrapper = styled.div`
-  ${TABLET} {
-    padding: 0 20px;
+  .giscus {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid ${theme.PALETTE.gray300};
   }
 `;

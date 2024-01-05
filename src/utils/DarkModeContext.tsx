@@ -22,14 +22,12 @@ export const DarkModeProvider = ({
   useEffect(() => {
     document.body.classList.remove(darkMode ? 'light' : 'dark');
     document.body.classList.add(darkMode ? 'dark' : 'light');
-  }, []);
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(prevMode => {
       const newMode = !prevMode;
       localStorage.setItem('darkMode', newMode.toString());
-      document.body.classList.remove(prevMode ? 'dark' : 'light');
-      document.body.classList.add(newMode ? 'dark' : 'light');
       return newMode;
     });
   };

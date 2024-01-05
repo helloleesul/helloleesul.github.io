@@ -1,43 +1,60 @@
 import React, { createRef, useEffect } from 'react';
 import { CommentWrapper } from './styled';
+import { useDarkModeContext } from '~/utils/DarkModeContext';
 
-const src = 'https://utteranc.es/client.js';
-const repo = '[username]/[username].github.io';
+const src = 'https://giscus.app/client.js';
+const dataRepo = 'helloleesul/helloleesul.github.io';
+const dataRepoId = 'R_kgDOK2JRmA';
 
-type UtterancesAttributesType = {
+type GiscusAttributesType = {
   src: string;
-  repo: string;
-  'issue-term': string;
-  label: string;
-  theme: string;
+  'data-repo': string;
+  'data-repo-id': string;
+  'data-category': string;
+  'data-category-id': string;
+  'data-mapping': string;
+  'data-strict': string;
+  'data-reactions-enabled': string;
+  'data-emit-metadata': string;
+  'data-input-position': string;
+  'data-theme': string;
+  'data-lang': string;
   crossorigin: string;
   async: string;
 };
 
 export default function CommentWidget() {
   const element = createRef<HTMLDivElement>();
+  const { darkMode } = useDarkModeContext();
 
   useEffect(() => {
     if (element.current === null) return;
 
-    const utterances: HTMLScriptElement = document.createElement('script');
+    const giscus: HTMLScriptElement = document.createElement('script');
 
-    const attributes: UtterancesAttributesType = {
+    const attributes: GiscusAttributesType = {
       src,
-      repo,
-      'issue-term': 'pathname',
-      label: 'Comment',
-      theme: `github-light`,
+      'data-repo': dataRepo,
+      'data-repo-id': dataRepoId,
+      'data-category': '',
+      'data-category-id': '',
+      'data-mapping': 'pathname',
+      'data-strict': '0',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+      'data-input-position': 'bottom',
+      'data-theme': darkMode ? 'dark_dimmed' : 'light',
+      'data-lang': 'ko',
       crossorigin: 'anonymous',
       async: 'true',
     };
 
     Object.entries(attributes).forEach(([key, value]) => {
-      utterances.setAttribute(key, value);
+      giscus.setAttribute(key, value);
     });
 
-    element.current.appendChild(utterances);
-  }, []);
+    element.current.appendChild(giscus);
+  }, [darkMode]);
 
   return <CommentWrapper ref={element} />;
 }
