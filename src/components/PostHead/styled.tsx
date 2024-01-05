@@ -8,23 +8,15 @@ type GatsbyImgProps = {
   className?: string;
 };
 
-export const PostHeadWrapper = styled.div`
-  position: relative;
-  height: 400px;
-
-  ${TABLET} {
-    height: 300px;
-  }
-`;
+export const PostHeadWrapper = styled.div``;
 
 export const BackgroundImage = styled((props: GatsbyImgProps) => (
-  <GatsbyImage {...props} style={{ position: 'absolute' }} />
+  <GatsbyImage {...props} />
 ))`
-  z-index: -1;
   width: 100%;
   height: 400px;
   object-fit: cover;
-  filter: brightness(0.25);
+  border-radius: 1rem;
 
   ${TABLET} {
     height: 300px;

@@ -10,6 +10,7 @@ import {
   Category,
   CategoryItem,
   Summary,
+  Detail,
 } from './styled';
 
 type PostItemProps = PostFrontmatterType & {
@@ -29,18 +30,19 @@ export default function PostItem({
   console.log(date);
   return (
     <PostItemWrapper to={link}>
-      <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
-
       <PostItemContent>
-        <Title>{title}</Title>
-        <Date>{date}</Date>
-        <Category>
-          {categories.map(category => (
-            <CategoryItem key={category}>{category}</CategoryItem>
-          ))}
-        </Category>
-        <Summary>{summary}</Summary>
+        <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
+        <Detail>
+          <Category>
+            {categories.map(category => (
+              <CategoryItem key={category}>{category}</CategoryItem>
+            ))}
+          </Category>
+          <Summary>{summary}</Summary>
+        </Detail>
       </PostItemContent>
+      <Date>{date}</Date>
+      <Title>{title}</Title>
     </PostItemWrapper>
   );
 }

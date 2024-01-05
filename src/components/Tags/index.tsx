@@ -11,7 +11,8 @@ export default function Tags({ selectedCategory, categoryList }: TagListProps) {
           active={name === selectedCategory}
           key={name}
         >
-          #{name}({count})
+          {name}
+          <span>({count})</span>
         </TagItem>
       ))}
     </TagListWrapper>

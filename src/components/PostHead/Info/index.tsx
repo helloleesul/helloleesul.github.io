@@ -1,8 +1,12 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-
-import { PostHeadInfoWrapper, PrevPageIcon, PostData, Title } from './styled';
+import {
+  PostHeadInfoWrapper,
+  PostData,
+  Title,
+  Date,
+  Category,
+  CategoryItem,
+} from './styled';
 import { PostHeadInfoProps } from '~/types/Post.types';
 
 export default function PostHeadInfo({
@@ -10,17 +14,16 @@ export default function PostHeadInfo({
   date,
   categories,
 }: PostHeadInfoProps) {
-  const goBackPage = () => window.history.back();
-
   return (
     <PostHeadInfoWrapper>
-      <PrevPageIcon onClick={goBackPage}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </PrevPageIcon>
       <Title>{title}</Title>
       <PostData>
-        <div>{categories.join(' / ')}</div>
-        <div>{date}</div>
+        <Date>{date}</Date>
+        <Category>
+          {categories.map(category => (
+            <CategoryItem key={category}>{category}</CategoryItem>
+          ))}
+        </Category>
       </PostData>
     </PostHeadInfoWrapper>
   );

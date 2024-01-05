@@ -1,48 +1,15 @@
 import styled from '@emotion/styled';
-import { TABLET } from '~/styles/common';
+import { RoundItem, TABLET } from '~/styles/common';
 
 export const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
-  margin: 0 auto;
-  padding: 60px 20px;
-  color: #ffffff;
-
-  ${TABLET} {
-    padding: 40px 20px;
-  }
-`;
-
-export const PrevPageIcon = styled.div`
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #000000;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
-  ${TABLET} {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-  }
+  gap: 2rem;
+  margin-bottom: 1rem;
 `;
 
 export const Title = styled.div`
-  display: -webkit-box;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  margin-top: auto;
-  text-overflow: ellipsis;
-  white-space: normal;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 45px;
+  font-size: 36px;
   font-weight: 800;
 
   ${TABLET} {
@@ -54,14 +21,20 @@ export const PostData = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: 700;
+  gap: 0.5rem;
+`;
 
-  ${TABLET} {
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 15px;
-    font-weight: 400;
-  }
+export const Category = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+`;
+
+export const CategoryItem = styled.li`
+  ${RoundItem}
+`;
+
+export const Date = styled.span`
+  ${RoundItem}
+  font-family: system-ui, sans-serif;
 `;

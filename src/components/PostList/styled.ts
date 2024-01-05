@@ -10,6 +10,5 @@ export const PostListWrapper = styled.div`
 
   ${TABLET} {
     grid-template-columns: 1fr;
-    padding: 50px 20px;
   }
 `;

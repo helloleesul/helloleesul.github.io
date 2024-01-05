@@ -1,77 +1,70 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { RoundItem } from '~/styles/common';
+import theme from '~/styles/theme';
+
+export const Detail = styled.div`
+  transition: opacity 0.2s;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  color: ${theme.PALETTE.white};
+`;
+
+export const PostItemContent = styled.div`
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+`;
 
 export const PostItemWrapper = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-  transition: 0.3s box-shadow;
-  cursor: pointer;
-
   &:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    ${Detail} {
+      opacity: 1;
+      backdrop-filter: blur(3px);
+    }
+    ${PostItemContent} {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    }
   }
 `;
 
 export const ThumbnailImage = styled(GatsbyImage)`
   height: 200px;
-  border-radius: 10px 10px 0 0;
 `;
 
-export const PostItemContent = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
+export const Title = styled.h3`
+  font-size: 1.5rem;
 `;
 
-export const Title = styled.div`
-  display: -webkit-box;
-  overflow: hidden;
-  margin-bottom: 3px;
-  text-overflow: ellipsis;
-  white-space: normal;
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 20px;
-  font-weight: 700;
+export const Date = styled.span`
+  ${RoundItem}
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-family: system-ui, sans-serif;
 `;
 
-export const Date = styled.div`
-  font-size: 14px;
-  font-weight: 400;
-  opacity: 0.7;
-`;
-
-export const Category = styled.div`
+export const Category = styled.ul`
+  position: absolute;
+  top: 0;
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 10px;
-  margin: 10px -5px;
+  gap: 0.5rem;
 `;
 
-export const CategoryItem = styled.div`
-  margin: 2.5px 5px;
-  padding: 3px 5px;
-  border-radius: 3px;
-  background: black;
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
+export const CategoryItem = styled.li`
+  ${RoundItem}
 `;
 
-export const Summary = styled.div`
-  display: -webkit-box;
-  overflow: hidden;
-  margin-top: auto;
-  text-overflow: ellipsis;
-  white-space: normal;
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 16px;
-  opacity: 0.8;
+export const Summary = styled.p`
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  font-weight: 300;
 `;

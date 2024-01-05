@@ -17,8 +17,8 @@ export default function PostHead({
 }: PostHeadProps) {
   return (
     <PostHeadWrapper>
-      <BackgroundImage image={thumbnail} alt="thumbnail" />
       <PostHeadInfo title={title} date={date} categories={categories} />
+      <BackgroundImage image={thumbnail} alt="thumbnail" />
     </PostHeadWrapper>
   );
 }

@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 const breakpoints = [576, 768, 992, 1200];
@@ -11,5 +12,14 @@ export const Container = styled.div`
 
   ${TABLET} {
     width: 100%;
+    padding: 0 1rem;
   }
+`;
+
+export const RoundItem = css`
+  border: 3px solid;
+  padding: 0.5rem 0.7rem;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: bold;
 `;
