@@ -46,6 +46,12 @@ const global = css`
     ::-webkit-scrollbar-thumb {
       background: ${theme.PALETTE.gray700};
     }
+
+    #MarkdownRenderer {
+      a {
+        color: ${theme.PALETTE.yellow};
+      }
+    }
   }
 
   body.light {

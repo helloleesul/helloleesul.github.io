@@ -6,5 +6,10 @@ interface PostContentProps {
 }
 
 export default function PostContent({ html }: PostContentProps) {
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <MarkdownRenderer
+      id="MarkdownRenderer"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
 }
