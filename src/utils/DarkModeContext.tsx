@@ -1,12 +1,14 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
+const isBrowser = typeof window !== 'undefined';
+
 interface DarkModeContextProps {
   darkMode: boolean;
   toggleDarkMode: () => void;
 }
 
 const DarkModeContext = createContext<DarkModeContextProps>({
-  darkMode: localStorage.getItem('darkMode') === 'true',
+  darkMode: isBrowser && localStorage.getItem('darkMode') === 'true',
   toggleDarkMode: () => {},
 });
 
@@ -16,18 +18,22 @@ export const DarkModeProvider = ({
   children: React.ReactNode;
 }) => {
   const [darkMode, setDarkMode] = useState(
-    localStorage.getItem('darkMode') === 'true',
+    isBrowser && localStorage.getItem('darkMode') === 'true',
   );
 
   useEffect(() => {
-    document.body.classList.remove(darkMode ? 'light' : 'dark');
-    document.body.classList.add(darkMode ? 'dark' : 'light');
+    if (isBrowser) {
+      document.body.classList.remove(darkMode ? 'light' : 'dark');
+      document.body.classList.add(darkMode ? 'dark' : 'light');
+    }
   }, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(prevMode => {
       const newMode = !prevMode;
-      localStorage.setItem('darkMode', newMode.toString());
+      if (isBrowser) {
+        localStorage.setItem('darkMode', newMode.toString());
+      }
       return newMode;
     });
   };
