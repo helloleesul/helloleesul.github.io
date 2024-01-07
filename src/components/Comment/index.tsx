@@ -4,7 +4,6 @@ import { useDarkModeContext } from '~/utils/DarkModeContext';
 
 const src = 'https://giscus.app/client.js';
 const dataRepo = 'helloleesul/helloleesul.github.io';
-const dataRepoId = 'R_kgDOK2JRmA';
 
 type GiscusAttributesType = {
   src: string;
@@ -35,9 +34,9 @@ export default function CommentWidget() {
     const attributes: GiscusAttributesType = {
       src,
       'data-repo': dataRepo,
-      'data-repo-id': dataRepoId,
-      'data-category': '',
-      'data-category-id': '',
+      'data-repo-id': 'R_kgDOK2JRmA',
+      'data-category': 'General',
+      'data-category-id': 'DIC_kwDOK2JRmM4CcN0b',
       'data-mapping': 'pathname',
       'data-strict': '0',
       'data-reactions-enabled': '1',
