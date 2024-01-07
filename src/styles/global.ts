@@ -40,11 +40,11 @@ const global = css`
     --background: ${theme.PALETTE.gray600};
 
     ::-webkit-scrollbar-track {
-      background: ${theme.PALETTE.gray200};
+      background: ${theme.PALETTE.gray600};
     }
 
     ::-webkit-scrollbar-thumb {
-      background: ${theme.PALETTE.white};
+      background: ${theme.PALETTE.gray700};
     }
   }
 
@@ -53,11 +53,11 @@ const global = css`
     --background: ${theme.PALETTE.white};
 
     ::-webkit-scrollbar-track {
-      background: ${theme.PALETTE.gray200};
+      background: ${theme.PALETTE.white};
     }
 
     ::-webkit-scrollbar-thumb {
-      background: ${theme.PALETTE.gray600};
+      background: ${theme.PALETTE.gray200};
     }
   }
 
