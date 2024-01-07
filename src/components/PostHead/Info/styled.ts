@@ -22,6 +22,12 @@ export const PostData = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
+
+  ${TABLET} {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 `;
 
 export const Category = styled.ul`

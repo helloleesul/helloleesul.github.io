@@ -7,7 +7,7 @@ const mediaQueries = breakpoints.map(bp => `@media (max-width: ${bp}px)`);
 export const [MOBILE, TABLET, LAPTOP, DESKTOP] = mediaQueries;
 
 export const Container = styled.div`
-  width: ${breakpoints[1]}px;
+  width: ${breakpoints[2]}px;
   margin: 0 auto;
 
   ${TABLET} {
@@ -22,4 +22,5 @@ export const RoundItem = css`
   border-radius: 100px;
   font-size: 14px;
   font-weight: bold;
+  list-style: none;
 `;

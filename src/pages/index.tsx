@@ -9,6 +9,7 @@ import PostList from '~/components/PostList';
 import { PostListItemType } from '~/types/Post.types';
 import { TagListProps } from '~/types/Tag.types';
 import Layout from '~/layout';
+import ToTopButton from '~/components/ToTopButton';
 
 type IndexPageProps = {
   location: {
@@ -88,6 +89,7 @@ export default function IndexPage({
       <Profile profileImage={gatsbyImageData} />
       <Tags selectedCategory={selectedCategory} categoryList={categoryList} />
       <PostList selectedCategory={selectedCategory} posts={edges} />
+      <ToTopButton />
     </Layout>
   );
 }

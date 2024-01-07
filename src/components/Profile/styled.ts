@@ -27,6 +27,7 @@ export const SubTitle = styled.p`
 export const LinkGroup = styled.ul`
   display: flex;
   gap: 1rem;
+  list-style: none;
   li {
     font-style: italic;
     font-weight: 800;

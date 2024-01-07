@@ -21,7 +21,6 @@ export default function Header({ title }: HeaderProps) {
           <span id="light">light</span>
           <span id="dark">dark</span>
         </div>
-        <input type="checkbox" />
       </ThemeSwitch>
     </HeaderWrapper>
   );

@@ -24,13 +24,12 @@ export const MarkdownRenderer = styled.div`
   h2,
   h3 {
     font-weight: 800;
-    margin-bottom: 30px;
   }
 
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 20px;
   }
 
   hr + h1,
@@ -63,19 +62,23 @@ export const MarkdownRenderer = styled.div`
   ol,
   ul {
     margin-left: 20px;
-    padding: 30px 0;
+    padding: 10px 0;
   }
 
   // Adjust Horizontal Rule style
   hr {
-    border: 1px solid #000000;
-    margin: 100px 0;
+    height: 1px;
+    border: none;
+    box-shadow: inset 0 0 0 1px;
+    margin: 20px 0;
   }
 
   // Adjust Link Element Style
   a {
     color: #4263eb;
-    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   // Adjust Code Style
@@ -93,6 +96,10 @@ export const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+  }
+
+  img {
+    max-width: 100%;
   }
 
   // Markdown Responsive Design
@@ -118,7 +125,7 @@ export const MarkdownRenderer = styled.div`
     }
 
     hr {
-      margin: 50px 0;
+      margin: 10px 0;
     }
   }
 `;

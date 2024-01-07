@@ -1,46 +1,28 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { PostFrontmatterType } from '~/types/Post.types';
+import { PageContextType, PostFrontmatterType } from '~/types/Post.types';
 import Layout from '~/layout';
 import PostHead from '~/components/PostHead';
 import PostContent from '~/components/PostContent';
 import Comment from '~/components/Comment';
 import Profile from '~/components/Profile';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
+import ArticleLinks from '~/components/ArticleLinks';
+import TableOfContents from '~/components/TableOfContents';
 import styled from '@emotion/styled';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faChevronLeft,
-  faChevronRight,
-} from '@fortawesome/free-solid-svg-icons';
-import theme from '~/styles/theme';
+import { TABLET } from '~/styles/common';
+import ToTopButton from '~/components/ToTopButton';
 
-const ArticleLinks = styled.div`
+const PostWrapper = styled.div`
   display: flex;
-  padding-bottom: 3rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid ${theme.PALETTE.gray300};
-  gap: 15rem;
-  > * {
-    flex: 1;
-    &:hover {
-      text-decoration: underline;
+  gap: 2rem;
+
+  ${TABLET} {
+    display: block;
+    nav {
+      display: none;
     }
-    > div {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      span {
-        display: inline-block;
-        margin: 0 1rem;
-      }
-    }
-  }
-  .prev {
-    text-align: left;
-  }
-  .next {
-    text-align: right;
   }
 `;
 
@@ -59,14 +41,12 @@ type PostTemplateProps = {
   location: {
     href: string;
   };
-  pageContext: {
-    prev: any;
-    next: any;
-  };
+  pageContext: PageContextType;
 };
 
 export type PostPageItemType = {
   node: {
+    tableOfContents: string;
     fields: { readingTime: { text: string } };
     html: string;
     frontmatter: PostFrontmatterType;
@@ -79,10 +59,11 @@ export default function PostTemplate({
     file,
   },
   location: { href },
-  pageContext: { prev, next },
+  pageContext,
 }: PostTemplateProps) {
   const {
     node: {
+      tableOfContents,
       fields: {
         readingTime: { text },
       },
@@ -99,39 +80,25 @@ export default function PostTemplate({
       },
     },
   } = edges[0];
-
   return (
     <Layout title={title} description={summary} url={href} image={publicURL}>
-      <PostHead
-        title={title}
-        date={date}
-        categories={categories}
-        thumbnail={gatsbyImageData}
-        readingTime={text}
-      />
-      <PostContent html={html} />
-      <ArticleLinks>
-        {prev && (
-          <Link to={prev.fields.slug} className="prev">
-            <div>
-              <FontAwesomeIcon icon={faChevronLeft} />
-              <span>다음 글</span>
-            </div>
-            <p>{prev.frontmatter.title}</p>
-          </Link>
-        )}
-        {next && (
-          <Link to={next.fields.slug} className="next">
-            <div>
-              <span>이전 글</span>
-              <FontAwesomeIcon icon={faChevronRight} />
-            </div>
-            <p>{next.frontmatter.title}</p>
-          </Link>
-        )}
-      </ArticleLinks>
-      <Profile profileImage={file?.childImageSharp?.gatsbyImageData} />
-      <Comment />
+      <PostWrapper>
+        <div>
+          <PostHead
+            title={title}
+            date={date}
+            categories={categories}
+            thumbnail={gatsbyImageData}
+            readingTime={text}
+          />
+          <PostContent html={html} />
+          <ArticleLinks {...pageContext} />
+          <Profile profileImage={file?.childImageSharp?.gatsbyImageData} />
+          <Comment />
+        </div>
+        <TableOfContents contents={tableOfContents} />
+      </PostWrapper>
+      <ToTopButton />
     </Layout>
   );
 }
@@ -141,6 +108,7 @@ export const queryMarkdownDataBySlug = graphql`
     allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
       edges {
         node {
+          tableOfContents
           fields {
             readingTime {
               text

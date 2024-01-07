@@ -29,3 +29,14 @@ export type PostHeadInfoProps = {
   categories: string[];
   readingTime: string;
 };
+
+export type PageContextType = {
+  [key: string]: {
+    fields: {
+      slug: string;
+    };
+    frontmatter: {
+      title: string;
+    };
+  };
+};

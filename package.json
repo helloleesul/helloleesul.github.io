@@ -23,6 +23,7 @@
     "gatsby-plugin-sitemap": "^6.12.3",
     "gatsby-plugin-tsconfig-paths": "^1.0.6",
     "gatsby-plugin-typescript": "^5.12.1",
+    "gatsby-remark-autolink-headers": "^6.13.0",
     "gatsby-remark-copy-linked-files": "^6.12.0",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^7.12.3",

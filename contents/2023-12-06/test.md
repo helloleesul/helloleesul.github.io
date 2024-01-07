@@ -1,18 +1,22 @@
 ---
-date: '2020-07-02'
-title: '구글에 SiteMap을 제출하여 사이트에 있는 파일'
+date: '2024-01-06'
+title: '테스트'
 categories: ['Web', 'SEO', 'Optimization']
 summary: '홈페이지를 운영하는 많은 사람들 또는 기업들이 검색 페이지 최상단에 보여지게 하기 위해 어떤 최적화 작업을 하는지 알아보자.'
 thumbnail: './test.jpg'
 ---
 
-### 1. Help Google Bot to Find My Contents
+# Help Google Bot to Find My Contents
 
 구글에 SiteMap을 제출하여 사이트에 있는 파일로서 새 페이지나 변경된 페이지가 있을 때 이를 검색 엔진에 알려주도록 할 수 있다.
 
 SiteMap은 사이트에 있는 페이지, 동영상 및 기타 파일과 각 관계에 관한 정보를 제공하는 파일로, 검색 엔진은 이를 읽고 사이트를 더 지능적으로 크롤링 할 수 있게 된다.
 
-### 2. Use 'Robots.txt' File
+# Use 'Robots.txt' File
+
+## Use 'Robots.txt' File
+
+### Use 'Robots.txt' File
 
 Robots.txt 파일은 검색 엔진에 어떤 페이지를 크롤링해도 되는지 알리는 파일로, 서버의 루트 디렉토리에 있어야 한다.
 
