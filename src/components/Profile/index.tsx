@@ -2,7 +2,13 @@ import React from 'react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 import ProfileImage from '~/components/Profile/Image';
-import { Wrapper, SubTitle, Title, LinkGroup, Description } from './styled';
+import {
+  ProfileWrapper,
+  SubTitle,
+  Title,
+  LinkGroup,
+  Description,
+} from './styled';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +20,7 @@ type ProfileProps = {
 
 export default function Profile({ profileImage }: ProfileProps) {
   return (
-    <Wrapper>
+    <ProfileWrapper>
       <ProfileImage profileImage={profileImage} />
 
       <Description>
@@ -43,6 +49,6 @@ export default function Profile({ profileImage }: ProfileProps) {
           </li>
         </LinkGroup>
       </Description>
-    </Wrapper>
+    </ProfileWrapper>
   );
 }

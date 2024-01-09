@@ -2,11 +2,15 @@ import styled from '@emotion/styled';
 import { TABLET } from '~/styles/common';
 import theme from '~/styles/theme';
 
-export const Wrapper = styled.div`
+export const ProfileWrapper = styled.div`
   border-radius: 1rem;
   display: flex;
   gap: 2rem;
   padding: 20px 0;
+
+  ${TABLET} {
+    flex-direction: column;
+  }
 `;
 
 export const Title = styled.p`

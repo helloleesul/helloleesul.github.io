@@ -7,11 +7,11 @@ const mediaQueries = breakpoints.map(bp => `@media (max-width: ${bp}px)`);
 export const [MOBILE, TABLET, LAPTOP, DESKTOP] = mediaQueries;
 
 export const Container = styled.div`
-  width: ${breakpoints[2]}px;
+  max-width: ${breakpoints[2]}px;
   margin: 0 auto;
 
   ${TABLET} {
-    width: 100%;
+    max-width: 100%;
     padding: 0 1rem;
   }
 `;

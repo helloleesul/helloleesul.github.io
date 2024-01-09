@@ -18,10 +18,6 @@ export const TagListWrapper = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   margin: 2rem auto 0;
-
-  ${TABLET} {
-    padding: 0 20px;
-  }
 `;
 
 export const TagItem = styled(({ active, ...props }: GatsbyLinkProps) => (
