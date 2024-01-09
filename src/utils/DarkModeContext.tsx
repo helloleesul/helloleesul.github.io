@@ -20,14 +20,11 @@ export const DarkModeProvider = ({
   const [darkMode, setDarkMode] = useState(
     isBrowser && localStorage.getItem('darkMode') === 'true',
   );
+
   useEffect(() => {
     if (isBrowser) {
       document.body.classList.remove(darkMode ? 'light' : 'dark');
       document.body.classList.add(darkMode ? 'dark' : 'light');
-      document.documentElement.setAttribute(
-        'data-theme',
-        darkMode ? 'dark' : 'light',
-      );
     }
   }, [darkMode]);
 

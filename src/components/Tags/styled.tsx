@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { TABLET } from '~/styles/common';
 import { Link } from 'gatsby';
 import theme from '~/styles/theme';
 
