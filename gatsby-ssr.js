@@ -12,12 +12,13 @@ const awaitLoadStorageScript = `
     try {
       const savedDarkMode = localStorage.getItem('darkMode');
       const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+      document.body.classList.add(isDarkMode ? 'dark' : 'light');
+      document.documentElement.setAttribute("data-theme", isDarkMode ? 'dark' : 'light');
       if (savedDarkMode === null) {
-        document.body.classList.add(isDarkMode ? 'dark' : 'light');
         localStorage.setItem('darkMode', isDarkMode.toString());
         return;
       };
-      document.body.classList.add(isDarkMode ? 'light' : 'dark');
+      document.body.classList.add(savedDarkMode === true ? 'dark' : 'light');
     } catch (e) {}
   })();
 `;
