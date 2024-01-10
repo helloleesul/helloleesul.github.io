@@ -17,7 +17,7 @@ export default function Header({ title }: HeaderProps) {
       </Title>
       <ThemeSwitch onClick={onChangeTheme}>
         <div id="mode-bg"></div>
-        <div id="mode-item" className={theme === 'dark' ? 'on' : 'off'}>
+        <div id="mode-item" className={theme === 'dark' ? 'on' : ''}>
           <span id="light">light</span>
           <span id="dark">dark</span>
         </div>
