@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import theme from '~/styles/theme';
@@ -19,16 +20,25 @@ export const TagListWrapper = styled.div`
   margin: 2rem auto 0;
 `;
 
+const ACTIVE = css`
+  border-bottom: 5px solid ${theme.PALETTE.yellow};
+  font-weight: 800;
+`;
+const INACTIVE = css`
+  border-bottom: none;
+  font-weight: 400;
+`;
+
 export const TagItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))`
+  ${INACTIVE}
+  ${({ active }) => active && ACTIVE}
   font-size: 18px;
-  font-weight: ${({ active }) => (active ? '800' : '400')};
-  border-bottom: ${({ active }) =>
-    active ? `5px solid ${theme.PALETTE.yellow}` : 'none'};
   cursor: pointer;
   display: flex;
   align-items: flex-start;
+  transition: font-weight 0.1s;
 
   span {
     font-size: 12px;

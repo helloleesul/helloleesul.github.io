@@ -1,11 +1,18 @@
 import styled from '@emotion/styled';
-import { RoundItem, TABLET } from '~/styles/common';
+import { Link } from 'gatsby';
+import { RoundItem, SCALE_TRANSITION, TABLET } from '~/styles/common';
+
+type GatsbyLinkProps = {
+  children: React.ReactNode;
+  className?: string;
+  to: string;
+};
 
 export const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
 `;
 
 export const Title = styled.div`
@@ -34,14 +41,18 @@ export const Category = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-`;
-
-export const CategoryItem = styled.li`
-  ${RoundItem}
+  list-style: none;
 `;
 
 export const Date = styled.span`
   ${RoundItem}
   font-family: system-ui, sans-serif;
   margin-right: 1rem;
+`;
+
+export const CategoryItem = styled((props: GatsbyLinkProps) => (
+  <Link {...props} />
+))`
+  ${RoundItem}
+  ${SCALE_TRANSITION}
 `;

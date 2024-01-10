@@ -25,7 +25,11 @@ export default function PostHeadInfo({
         </div>
         <Category>
           {categories.map(category => (
-            <CategoryItem key={category}>{category}</CategoryItem>
+            <li key={category}>
+              <CategoryItem to={`/?category=${category}`}>
+                {category}
+              </CategoryItem>
+            </li>
           ))}
         </Category>
       </PostData>

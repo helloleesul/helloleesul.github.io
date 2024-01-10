@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { TABLET } from '~/styles/common';
+import { SCALE_TRANSITION, TABLET } from '~/styles/common';
 import theme from '~/styles/theme';
 
 export const ProfileWrapper = styled.div`
@@ -37,7 +37,8 @@ export const LinkGroup = styled.ul`
     font-weight: 800;
     color: ${theme.PALETTE.yellow};
     a {
-      padding: 5px 15px;
+      height: 30px;
+      padding: 0 15px;
       background-color: ${theme.PALETTE.gray500};
       display: flex;
       align-items: center;
@@ -46,6 +47,7 @@ export const LinkGroup = styled.ul`
       span {
         font-size: 12px;
       }
+      ${SCALE_TRANSITION}
     }
   }
 `;

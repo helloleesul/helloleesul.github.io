@@ -6,25 +6,36 @@ const mediaQueries = breakpoints.map(bp => `@media (max-width: ${bp}px)`);
 
 export const [MOBILE, TABLET, LAPTOP, DESKTOP] = mediaQueries;
 
+export const THEME_TRANSITION = css`
+  background-color: var(--background);
+  color: var(--color);
+  transition:
+    background 0.3s ease-in,
+    color 0.3s ease-in;
+`;
+
+export const SCALE_TRANSITION = css`
+  transition: transform 0.1s ease-in;
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
 export const Container = styled.div`
   max-width: ${breakpoints[2]}px;
   margin: 0 auto;
+  padding: 0 1rem;
 
   ${TABLET} {
     max-width: 100%;
-    padding: 0 1rem;
   }
 `;
 
 export const Background = styled.div`
   position: sticky;
   top: 0;
-  height: 100vh;
-  background-color: var(--background);
-  color: var(--color);
-  transition:
-    background 0.3s ease-in,
-    color 0.3s ease-in;
+  height: 100%;
+  ${THEME_TRANSITION}
 `;
 
 export const RoundItem = css`
@@ -34,4 +45,5 @@ export const RoundItem = css`
   font-size: 14px;
   font-weight: bold;
   list-style: none;
+  display: inline-block;
 `;

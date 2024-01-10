@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import theme from './theme';
+import { THEME_TRANSITION } from './common';
 
 const global = css`
   * {
@@ -20,11 +21,7 @@ const global = css`
   html,
   body {
     height: 100%;
-    background-color: var(--background);
-    color: var(--color);
-    transition:
-      background 0.2s ease-in,
-      color 0.2s ease-in;
+    ${THEME_TRANSITION}
   }
 
   #___gatsby {
