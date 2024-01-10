@@ -65,6 +65,10 @@ export default function Layout({
           href="/favicon-16x16.png"
         />
 
+        <meta
+          name="google-site-verification"
+          content="2ZuLbEonDvmSVroBj8K7OgYWA2aJa67ahcigdZ4iNp0"
+        />
         <html lang="ko" />
       </Helmet>
       <Global styles={global} />
