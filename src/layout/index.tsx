@@ -69,6 +69,11 @@ export default function Layout({
           name="google-site-verification"
           content="2ZuLbEonDvmSVroBj8K7OgYWA2aJa67ahcigdZ4iNp0"
         />
+        <meta
+          name="naver-site-verification"
+          content="52642daf5d30c3e17bff29171779f6bbdf9599c6"
+        />
+
         <html lang="ko" />
       </Helmet>
       <Global styles={global} />
