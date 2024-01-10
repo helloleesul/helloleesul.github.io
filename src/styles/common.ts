@@ -16,6 +16,17 @@ export const Container = styled.div`
   }
 `;
 
+export const Background = styled.div`
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background-color: var(--background);
+  color: var(--color);
+  transition:
+    background 0.3s ease-in,
+    color 0.3s ease-in;
+`;
+
 export const RoundItem = css`
   border: 3px solid;
   padding: 0.5rem 0.7rem;

@@ -10,14 +10,14 @@
 const awaitLoadStorageScript = `
   (function() {
     try {
-      const savedDarkMode = localStorage.getItem('darkMode');
+      const savedTheme = localStorage.getItem('theme');
       const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
       
-      if (savedDarkMode === null) {
-        localStorage.setItem('darkMode', isDarkMode.toString());
+      if (savedTheme === null) {
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
         return;
       };
-      document.body.classList.add(savedDarkMode === true ? 'dark' : 'light');
+      document.body.classList.add(savedTheme);
     } catch (e) {}
   })();
 `;

@@ -6,8 +6,8 @@ import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import theme from '~/styles/theme';
 import global from '~/styles/global';
-import { Container } from '~/styles/common';
-import { DarkModeProvider } from '~/utils/DarkModeContext';
+import { Background, Container } from '~/styles/common';
+import { ThemeContextProvider } from '~/context/ThemeContextProvider';
 
 type LayoutProps = {
   title: string;
@@ -49,15 +49,17 @@ export default function Layout({
 
         <html lang="ko" />
       </Helmet>
+      <Global styles={global} />
       <ThemeProvider theme={theme}>
-        <Global styles={global} />
-        <DarkModeProvider>
-          <Container>
-            <Header title="leesulog." />
-            <main>{children}</main>
-            <Footer />
-          </Container>
-        </DarkModeProvider>
+        <ThemeContextProvider>
+          <Background>
+            <Container>
+              <Header title="leesulog." />
+              <main>{children}</main>
+              <Footer />
+            </Container>
+          </Background>
+        </ThemeContextProvider>
       </ThemeProvider>
     </>
   );

@@ -22,6 +22,9 @@ const global = css`
     height: 100%;
     background-color: var(--background);
     color: var(--color);
+    transition:
+      background 0.2s ease-in,
+      color 0.2s ease-in;
   }
 
   #___gatsby {
