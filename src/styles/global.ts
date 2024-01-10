@@ -50,6 +50,15 @@ const global = css`
       background: ${theme.PALETTE.gray700};
     }
 
+    #mode-item {
+      .light {
+        transform: translate(1.7rem, -50%);
+      }
+      .dark {
+        transform: translate(1.3rem, 0) scale(1);
+      }
+    }
+
     #MarkdownRenderer {
       a {
         color: ${theme.PALETTE.yellow};

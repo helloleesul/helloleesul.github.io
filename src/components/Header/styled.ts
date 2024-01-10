@@ -41,23 +41,15 @@ export const ThemeSwitch = styled.div`
       border-radius: 100%;
       transition: all 0.2s;
     }
-    #light {
+    .light {
       background-color: ${theme.PALETTE.yellow};
       top: 50%;
       transform: translate(0, -50%);
     }
-    #dark {
+    .dark {
       background-color: ${theme.PALETTE.gray500};
       top: 0;
       transform: translate(-1.3rem, -0.3rem) scale(0.3);
-    }
-    &.on {
-      #light {
-        transform: translate(1.7rem, -50%);
-      }
-      #dark {
-        transform: translate(1.3rem, 0) scale(1);
-      }
     }
   }
   input {

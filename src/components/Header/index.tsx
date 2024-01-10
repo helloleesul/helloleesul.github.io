@@ -8,7 +8,7 @@ type HeaderProps = {
 };
 
 export default function Header({ title }: HeaderProps) {
-  const { theme, onChangeTheme } = useThemeContext();
+  const { onChangeTheme } = useThemeContext();
 
   return (
     <HeaderWrapper>
@@ -17,9 +17,9 @@ export default function Header({ title }: HeaderProps) {
       </Title>
       <ThemeSwitch onClick={onChangeTheme}>
         <div id="mode-bg"></div>
-        <div id="mode-item" className={theme === 'dark' ? 'on' : ''}>
-          <span id="light">light</span>
-          <span id="dark">dark</span>
+        <div id="mode-item">
+          <span className="light">light</span>
+          <span className="dark">dark</span>
         </div>
       </ThemeSwitch>
     </HeaderWrapper>
