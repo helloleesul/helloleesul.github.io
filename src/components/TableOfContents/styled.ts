@@ -4,6 +4,7 @@ export const TOCWrapper = styled.nav`
   #table-on-contents {
     position: sticky;
     top: 3rem;
+    flex: 1;
 
     > p {
       font-weight: bold;

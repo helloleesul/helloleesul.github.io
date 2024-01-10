@@ -17,7 +17,9 @@ import ToTopButton from '~/components/ToTopButton';
 const PostWrapper = styled.div`
   display: flex;
   gap: 2rem;
-
+  > article {
+    flex: 3;
+  }
   ${TABLET} {
     display: block;
     nav {
@@ -83,7 +85,7 @@ export default function PostTemplate({
   return (
     <Layout title={title} description={summary} url={href} image={publicURL}>
       <PostWrapper>
-        <div>
+        <article>
           <PostHead
             title={title}
             date={date}
@@ -95,7 +97,7 @@ export default function PostTemplate({
           <ArticleLinks {...pageContext} />
           <Profile profileImage={file?.childImageSharp?.gatsbyImageData} />
           <Comment />
-        </div>
+        </article>
         <TableOfContents contents={tableOfContents} />
       </PostWrapper>
       <ToTopButton />

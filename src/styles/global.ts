@@ -57,8 +57,12 @@ const global = css`
     }
 
     #MarkdownRenderer {
-      a {
-        color: ${theme.PALETTE.yellow};
+      a,
+      *:not(pre) > code[class*='language-'] {
+        color: cornflowerblue;
+      }
+      th {
+        background: ${theme.PALETTE.gray500};
       }
     }
   }
@@ -74,6 +78,22 @@ const global = css`
     ::-webkit-scrollbar-thumb {
       background: ${theme.PALETTE.gray200};
     }
+
+    #MarkdownRenderer {
+      a,
+      *:not(pre) > code[class*='language-'] {
+        color: lightcoral;
+      }
+      th {
+        background: ${theme.PALETTE.gray100};
+      }
+    }
+  }
+
+  #MarkdownRenderer {
+    *:not(pre) > code[class*='language-'] {
+      background: transparent;
+    }
   }
 
   ::-webkit-scrollbar {
@@ -88,13 +108,15 @@ const global = css`
     }
   }
 
-  .gatsby-highlight pre[class*='language-'] {
-    // background-color: transparent;
-    margin: 0;
-    padding: 0;
-    overflow: initial;
-    float: left; /* 1 */
-    min-width: 100%; /* 2 */
+  .gatsby-highlight {
+    pre[class*='language-'] {
+      // background-color: transparent;
+      margin: 0;
+      padding: 0;
+      overflow: initial;
+      float: left; /* 1 */
+      min-width: 100%; /* 2 */
+    }
   }
 
   .gatsby-highlight-code-line {

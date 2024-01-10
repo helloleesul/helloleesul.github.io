@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { TABLET } from '~/styles/common';
+import theme from '~/styles/theme';
 
 export const MarkdownRenderer = styled.div`
   // Renderer Style
@@ -54,7 +55,7 @@ export const MarkdownRenderer = styled.div`
   blockquote {
     margin: 30px 0;
     padding: 5px 15px;
-    border-left: 2px solid #000000;
+    border-left: 2px solid;
     font-weight: 800;
   }
 
@@ -75,7 +76,6 @@ export const MarkdownRenderer = styled.div`
 
   // Adjust Link Element Style
   a {
-    color: #4263eb;
     &:hover {
       text-decoration: underline;
     }
@@ -86,6 +86,7 @@ export const MarkdownRenderer = styled.div`
     margin: 30px 0;
     padding: 15px;
     font-size: 15px;
+    border-radius: 8px;
 
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
@@ -100,6 +101,15 @@ export const MarkdownRenderer = styled.div`
 
   img {
     max-width: 100%;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  th,
+  td {
+    border: 1px solid;
   }
 
   // Markdown Responsive Design
