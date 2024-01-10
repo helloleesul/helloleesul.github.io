@@ -34,7 +34,7 @@ export const Container = styled.div`
 export const Background = styled.div`
   position: sticky;
   top: 0;
-  height: 100%;
+  min-height: 100vh;
   ${THEME_TRANSITION}
 `;
 
