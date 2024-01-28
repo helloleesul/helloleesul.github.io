@@ -56,7 +56,7 @@ export const MarkdownRenderer = styled.div`
     margin: 30px 0;
     padding: 5px 15px;
     border-left: 2px solid;
-    font-weight: 800;
+    font-weight: 500;
   }
 
   // Adjust List Element Style
@@ -109,6 +109,7 @@ export const MarkdownRenderer = styled.div`
   th,
   td {
     border: 1px solid;
+    padding: 2px 10px;
   }
 
   // Markdown Responsive Design
