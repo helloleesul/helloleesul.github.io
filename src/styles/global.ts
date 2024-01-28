@@ -61,7 +61,8 @@ const global = css`
       *:not(pre) > code[class*='language-'] {
         color: cornflowerblue;
       }
-      th {
+      th,
+      hr {
         background: ${theme.PALETTE.gray500};
       }
     }
@@ -84,8 +85,9 @@ const global = css`
       *:not(pre) > code[class*='language-'] {
         color: lightcoral;
       }
-      th {
-        background: ${theme.PALETTE.gray100};
+      th,
+      hr {
+        background: ${theme.PALETTE.gray200};
       }
     }
   }

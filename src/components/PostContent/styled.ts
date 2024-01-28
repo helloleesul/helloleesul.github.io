@@ -70,8 +70,7 @@ export const MarkdownRenderer = styled.div`
   hr {
     height: 1px;
     border: none;
-    box-shadow: inset 0 0 0 1px;
-    margin: 20px 0;
+    margin: 30px 0;
   }
 
   // Adjust Link Element Style
