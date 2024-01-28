@@ -3,7 +3,7 @@ date: '2023-05-18'
 title: 'CSS Flex를 사용해보자.'
 categories: ['CSS']
 summary: 'CSS float이 정말 싫어서 두번째로 싫은 inline-block을 사용했었다.'
-thumbnail: './thumbnail.png'
+thumbnail: './css-flex.png'
 ---
 
 # Flexbox
