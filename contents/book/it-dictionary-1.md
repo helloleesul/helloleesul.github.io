@@ -3,7 +3,7 @@ date: '2023-01-13'
 title: '[북클럽 챌린지] 책 구매 인증'
 categories: ['Book']
 summary: '노마드코더 개발자 북클럽 챌린지 도전!'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 1

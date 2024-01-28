@@ -3,7 +3,7 @@ date: '2023-01-18'
 title: '[북클럽 챌린지] DAY 6'
 categories: ['Book']
 summary: '서버리스는 서버가 없다는 뜻?'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 6

@@ -3,7 +3,7 @@ date: '2023-01-19'
 title: '[북클럽 챌린지] DAY 7'
 categories: ['Book']
 summary: '자료구조와 알고리즘은 대체 언제 필요할까?'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 7

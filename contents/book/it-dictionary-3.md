@@ -3,7 +3,7 @@ date: '2023-01-15'
 title: '[북클럽 챌린지] DAY 3'
 categories: ['Book']
 summary: '오류를 고치기 전에 오류가 왜 생겼는지를 이해하기'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 3

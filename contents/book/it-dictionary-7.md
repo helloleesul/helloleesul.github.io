@@ -3,7 +3,7 @@ date: '2023-01-21'
 title: '[북클럽 챌린지] DAY 9'
 categories: ['Book']
 summary: '클린 코드: 설명이 필요없는 코드, 잘 실행되면서 이 코드만 봐도 충분히 설명할 수 있는 상태'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 9

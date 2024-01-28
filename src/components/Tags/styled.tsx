@@ -18,6 +18,7 @@ export const TagListWrapper = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   margin: 2rem auto 0;
+  align-items: baseline;
 `;
 
 const ACTIVE = css`

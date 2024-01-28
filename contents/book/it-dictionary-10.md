@@ -3,7 +3,7 @@ date: '2023-01-25'
 title: '[북클럽 챌린지] DAY 13'
 categories: ['Book']
 summary: '챌린지 종료!'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 12

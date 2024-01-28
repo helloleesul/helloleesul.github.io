@@ -3,7 +3,7 @@ date: '2023-01-22'
 title: '[북클럽 챌린지] DAY 10'
 categories: ['Book']
 summary: '시스템은 한번 구축하면 끝이 아니야. 개발자라면 코드를 살아있는 생명체처럼 대해야 해. 꾸준히 관리 해야 하지.'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 10

@@ -3,7 +3,7 @@ date: '2023-01-14'
 title: '[북클럽 챌린지] DAY 2'
 categories: ['Book']
 summary: '좋은 개발자는 암기력이 아니라 개발 과정을 잘 이해할 수 있어야 한다는 것'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 3

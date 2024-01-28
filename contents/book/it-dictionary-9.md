@@ -3,7 +3,7 @@ date: '2023-01-24'
 title: '[북클럽 챌린지] DAY 12'
 categories: ['Book']
 summary: '객체 지향 프로그래밍이 뭐죠?'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 12

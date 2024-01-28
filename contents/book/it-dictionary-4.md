@@ -3,7 +3,7 @@ date: '2023-01-17'
 title: '[북클럽 챌린지] DAY 5'
 categories: ['Book']
 summary: '프로그래밍 초보자가 하는 실수'
-thumbnail: './book-club-it-dictionary.png'
+thumbnail: './it-dictionary.png'
 ---
 
 ## DAY 5
