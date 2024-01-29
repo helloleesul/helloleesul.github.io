@@ -80,7 +80,7 @@ _**이것만 알고 이해해도 사용하는데 큰 도움이 된다.**_
 
 ---
 
-### 찾아본 자료 🔍
+### 참고자료
 
 [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)  
 [CSS 플렉스박스(flex) flex-grow와 flex-shrink 속성의 완벽 이해](https://blogpack.tistory.com/863)  

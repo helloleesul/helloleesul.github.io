@@ -24,11 +24,11 @@ export default function Profile({ profileImage }: ProfileProps) {
       <ProfileImage profileImage={profileImage} />
 
       <Description>
-        <Title>leesul</Title>
+        <Title>leesul, 이슬</Title>
         <SubTitle>
-          frontend developer
+          web frontend developer
           <br />
-          "스스로 올바른 선택을 할 수 있는 사람이 될 것"
+          스스로 올바른 선택을 할 수 있는 사람이 될 것
         </SubTitle>
         <LinkGroup>
           <li>

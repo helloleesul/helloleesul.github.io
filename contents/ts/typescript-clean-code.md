@@ -61,7 +61,7 @@ console.log(text.charAt(0));
 
 ---
 
-# 클린 코드와 타입스크립트
+## 클린 코드와 타입스크립트
 
 ```js
 let text: String = 'hello TypeScript';
