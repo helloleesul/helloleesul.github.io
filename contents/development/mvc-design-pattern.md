@@ -78,30 +78,30 @@ MVC는 복잡한 뷰와 모델간의 양방향 소통을 해결해주지 않는�
 
 ## 프론트엔드에서 사용되는 기술들
 
-**데이터 바인딩**
-뷰와 모델이 자동으로 변경된다. 뷰가 변경되면 모델이, 모델이 변경되면 뷰가 변경된다.
+- **데이터 바인딩**  
+  뷰와 모델이 자동으로 변경된다. 뷰가 변경되면 모델이, 모델이 변경되면 뷰가 변경된다.
 
-```html
-// Svelt
-<script>
-  let name = 'hello';
-</script>
-<h1>hi {name}</h1>
-<input bind:value="{name}" />
-```
+  ```html
+  // Svelt
+  <script>
+    let name = 'hello';
+  </script>
+  <h1>hi {name}</h1>
+  <input bind:value="{name}" />
+  ```
 
-**MVVM 디자인패턴**
+- **MVVM 디자인패턴**
 
-![](https://i.imgur.com/ZM4L2Z3.png)
+  ![](https://i.imgur.com/ZM4L2Z3.png)
 
-![](https://i.imgur.com/yl0VOk8.png)
-VM: 뷰용 모델이며, 뷰와 뷰모델은 서로 양방향으로 데이터바인딩된다.  
-**View를 그리는 Model만 다루게 되었다는 의미로 ViewModel**
+  ![](https://i.imgur.com/yl0VOk8.png)
+  VM: 뷰용 모델이며, 뷰와 뷰모델은 서로 양방향으로 데이터바인딩된다.  
+  **View를 그리는 Model만 다루게 되었다는 의미로 ViewModel**
 
-**Flux 아키텍처**
-![](https://i.imgur.com/8V6IyJn.png)
-한 방향으로 흐름을 진행한다.  
-뷰에서 변경사항이 생기면(action) 어떤 이벤트를 발생시키고(dispatcher) store에 전달하여 다시 뷰(view)에 반영하는 단순한 흐름
+- **Flux 아키텍처**
+  ![](https://i.imgur.com/8V6IyJn.png)
+  한 방향으로 흐름을 진행한다.  
+  뷰에서 변경사항이 생기면(action) 어떤 이벤트를 발생시키고(dispatcher) store에 전달하여 다시 뷰(view)에 반영하는 단순한 흐름
 
 ---
 
