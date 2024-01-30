@@ -2,7 +2,7 @@
 date: '2023-10-11'
 title: 'Log in과 Sign in의 차이는 뭘까?'
 categories: ['UIUX']
-summary: '미완성적이며 면과 선, 산세리프 글꼴 위주의 단순함을 이용한 디자인 양식'
+summary: '로그인을 Log in으로 할지 Sign in으로 할지 또는 회원가입을 Join으로 할지 Sign up으로 할지 짧은 고민에 빠지게 되었다.'
 thumbnail: './log-in-or-sign-in.jpg'
 ---
 
@@ -56,8 +56,8 @@ Log의 사전적 의미를 찾아보면 '통나무'인데, 당시 배들이 대�
 > 컴퓨터, 특히 다중 사용자 컴퓨터 또는 원격 또는 네트워크에 연결된 컴퓨터 시스템에 로그인하는 행위_
 >
 > 💡 **sign-in**  
-> _an act, an instance, or a time of signing in_  
-> 행위, 인스턴스 또는 로그인 시간
+> _an act, an instance, or a time of signing in  
+> 행위, 인스턴스 또는 로그인 시간_
 
 ---
 
