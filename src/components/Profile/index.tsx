@@ -1,7 +1,7 @@
 import React from 'react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 
-import ProfileImage from '~/components/Profile/Image';
+import ProfileImage from '~/components/Profile/ProfileImage';
 import {
   ProfileWrapper,
   SubTitle,

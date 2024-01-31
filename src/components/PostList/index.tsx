@@ -5,7 +5,7 @@ import useInfiniteScroll, {
 } from '~/hooks/useInfiniteScroll';
 
 import { PostListItemType } from '~/types/Post.types';
-import PostItem from './Item';
+import PostItem from './PostItem';
 import { PostListWrapper } from './styled';
 
 type PostListProps = {

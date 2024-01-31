@@ -2,7 +2,7 @@ import React from 'react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { PostHeadInfoProps } from '~/types/Post.types';
-import PostHeadInfo from './Info';
+import PostHeadInfo from './PostHeadInfo';
 import { PostHeadWrapper, BackgroundImage } from './styled';
 
 type PostHeadProps = PostHeadInfoProps & {
