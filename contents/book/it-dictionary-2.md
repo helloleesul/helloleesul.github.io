@@ -6,7 +6,7 @@ summary: '좋은 개발자는 암기력이 아니라 개발 과정을 잘 이해
 thumbnail: './it-dictionary.png'
 ---
 
-## DAY 3
+## DAY 2
 
 🔖 오늘 읽은 범위 : **에피소드 1 ~ 5**
 

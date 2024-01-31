@@ -23,7 +23,7 @@ _Dribbble에서 검색한 Brustalism Design_
 
 ---
 
-## Brutalism UI Design을 검색해봤다
+## Brutalism UI Design
 
 > **_Brutalism_** in digital design is a style that intentionally attempts to look raw, haphazard, or unadorned. It echoes early 1990s-style websites (think Craigslist and the Drudge Report). Sometimes this aspect of brutalism is expressed as bare-bones, almost naked HTML site with blue links and monochromatic Monospace text.
 >

@@ -15,10 +15,15 @@ import { TABLET } from '~/styles/common';
 import ToTopButton from '~/components/ToTopButton';
 
 const PostWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 'article article article nav';
   gap: 2rem;
   > article {
-    flex: 3;
+    grid-area: article;
+  }
+  > nav {
+    grid-area: nav;
   }
   ${TABLET} {
     display: block;
