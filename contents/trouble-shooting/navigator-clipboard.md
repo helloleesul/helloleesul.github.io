@@ -1,9 +1,9 @@
 ---
 date: '2023-10-05'
-title: 'navigator.clipobard Web API'
+title: 'navigator.clipboard Web API'
 categories: ['트러블슈팅']
 summary: '엘리스 1차 쇼핑몰 프로젝트 작업 중 발생한 복사하기 기능 오류'
-thumbnail: './navigator-clipobard.png'
+thumbnail: './navigator-clipboard.png'
 ---
 
 # 복사하기 기능 오류
