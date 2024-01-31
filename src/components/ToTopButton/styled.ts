@@ -10,7 +10,8 @@ export const Button = styled.button`
   position: absolute;
   right: 0;
   bottom: 0;
-  background: none;
+  background: #fff;
+  border-radius: 100px;
   border: none;
   outline: none;
 `;
