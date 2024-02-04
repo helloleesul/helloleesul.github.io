@@ -1,7 +1,7 @@
 ---
 date: '2023-06-14'
 title: '클린 코드로 이해하는 타입스크립트'
-categories: ['TypeScript']
+categories: ['개발']
 summary: '타입스크립트를 써야하는 이유와 이해'
 thumbnail: './typescript-clean-code.webp'
 ---
