@@ -113,6 +113,12 @@ MVVM, Flux등의 패턴이 유용하다.
 
 ---
 
+이해한 개념을 토대로 그림을 그려봤다.
+![](https://i.imgur.com/PlddQWR.png)
+![](https://i.imgur.com/nYYYzV7.png)
+
+---
+
 ### 참고자료
 
 [프론트엔드에서 MVC보다 더 많이 쓰이는 패턴은 ?](https://youtu.be/Y5vOfv67h8A?si=KjhtHK6-t-UISreA)  
