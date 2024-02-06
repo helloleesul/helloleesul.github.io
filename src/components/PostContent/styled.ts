@@ -64,6 +64,10 @@ export const MarkdownRenderer = styled.div`
     margin-left: 20px;
     padding: 10px 0;
   }
+  li ul,
+  li ol {
+    padding: 0;
+  }
 
   // Adjust Horizontal Rule style
   hr {
