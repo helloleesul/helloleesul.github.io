@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { HeaderWrapper, Title, ThemeSwitch } from './styled';
 import { Link } from 'gatsby';
 import { useThemeContext } from '~/context/ThemeContextProvider';
@@ -7,11 +7,14 @@ type HeaderProps = {
   title: string;
 };
 
-export default function Header({ title }: HeaderProps) {
+export default forwardRef<HTMLHeadingElement, HeaderProps>(function Header(
+  { title },
+  ref,
+) {
   const { onChangeTheme } = useThemeContext();
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper ref={ref}>
       <Title>
         <Link to="/">{title}</Link>
       </Title>
@@ -24,4 +27,4 @@ export default function Header({ title }: HeaderProps) {
       </ThemeSwitch>
     </HeaderWrapper>
   );
-}
+});

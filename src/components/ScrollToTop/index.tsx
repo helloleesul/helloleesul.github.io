@@ -4,16 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronUp } from '@fortawesome/free-solid-svg-icons';
 import theme from '~/styles/theme';
 
-export default function ToTopButton() {
-  const handleToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+export default function ScrollToTop({ onClick }: { onClick: () => void }) {
   return (
     <ButtonWrapper>
-      <Button onClick={handleToTop}>
+      <Button onClick={onClick}>
         <FontAwesomeIcon
           icon={faCircleChevronUp}
           size="3x"

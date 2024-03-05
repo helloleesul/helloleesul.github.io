@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Global, ThemeProvider } from '@emotion/react';
 
@@ -8,6 +8,7 @@ import theme from '~/styles/theme';
 import global from '~/styles/global';
 import { Background, Container } from '~/styles/common';
 import { ThemeContextProvider } from '~/context/ThemeContextProvider';
+import ScrollToTop from '~/components/ScrollToTop';
 
 type LayoutProps = {
   title: string;
@@ -24,6 +25,7 @@ export default function Layout({
   image,
   children,
 }: LayoutProps) {
+  const topRef = useRef<HTMLHeadingElement>(null);
   return (
     <>
       <Helmet>
@@ -81,9 +83,14 @@ export default function Layout({
         <ThemeContextProvider>
           <Background>
             <Container>
-              <Header title="leesulog." />
+              <Header title="leesulog." ref={topRef} />
               <main>{children}</main>
               <Footer />
+              <ScrollToTop
+                onClick={() =>
+                  topRef.current?.scrollIntoView({ behavior: 'smooth' })
+                }
+              />
             </Container>
           </Background>
         </ThemeContextProvider>
