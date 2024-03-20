@@ -12,7 +12,6 @@ import ArticleLinks from '~/components/ArticleLinks';
 import TableOfContents from '~/components/TableOfContents';
 import styled from '@emotion/styled';
 import { TABLET } from '~/styles/common';
-import ScrollToTop from '~/components/ScrollToTop';
 
 const PostWrapper = styled.div`
   display: grid;
@@ -105,7 +104,6 @@ export default function PostTemplate({
         </article>
         <TableOfContents contents={tableOfContents} />
       </PostWrapper>
-      <ScrollToTop />
     </Layout>
   );
 }
