@@ -19,6 +19,6 @@ export const BackgroundImage = styled((props: GatsbyImgProps) => (
   border-radius: 1rem;
 
   ${TABLET} {
-    height: 300px;
+    height: 200px;
   }
 `;

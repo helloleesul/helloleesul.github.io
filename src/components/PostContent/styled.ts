@@ -117,7 +117,6 @@ export const MarkdownRenderer = styled.div`
 
   // Markdown Responsive Design
   ${TABLET} {
-    padding: 80px 20px;
     line-height: 1.6;
     font-size: 14px;
 
@@ -139,6 +138,14 @@ export const MarkdownRenderer = styled.div`
 
     hr {
       margin: 10px 0;
+    }
+
+    pre[class*='language-'] {
+      font-size: 10px;
+    }
+
+    blockquote {
+      margin: 15px 0;
     }
   }
 `;

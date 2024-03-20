@@ -15,7 +15,7 @@ Next.js 프레임워크로 작업한 프로젝트에서 새로고침 시 style-c
 
 ---
 
-## styled-components의 동작
+## styled-components의 동작과정
 
 ```js
 const Button = styled.button`
@@ -70,7 +70,7 @@ Next.js는 서버 컴포넌트 및 서버 사이드 렌더링(SSR)을 기본 환
 - 페이지가 이동되면서 **CSR** 렌더링된 컴포넌트의 **className B**
   ![](https://i.imgur.com/NX3T8QK.png)
 
-- **CSR** 렌더링된 컴포넌트에서 새로고침 시
+- **CSR** 렌더링된 컴포넌트에서 새로고침 시  
   초기에 **SSR** 렌더링되며 생성된 **className A**의 식별자를 갖게 되면서 스타일이 깨짐
   ![](https://i.imgur.com/cFqNb18.png)
   ![](https://i.imgur.com/UqOlIou.png)
@@ -161,11 +161,12 @@ Next.js 공식문서에 따르면 서버 컴포넌트와 맞지 않는 styled-co
 
 ## 마치며
 
-- 이번 문제를 발견하고 해결하기 위해 styled-components의 동작 원리까지 서치하면서, 수박 겉핥기로만 알 것 같았던(그러니까 클라이언트랑 서버랑 서로 다른 `className`을 갖게된 건 알았는데 도대체 왜?) 부분을 이해할 수 있었다. 그리고 Next.js 프레임워크의 인기로 인해 styled-components 라이브러리의 선택이 왜 점점 시들해지는 지도 체감하게 되었다.
-- 무작정 Next.js 13버전을 사용하게 되면서 덕분에 공식 문서를 열심히 읽게 되는 나 자신을 발견했다.
-- 참고 자료 덕분에 styled-components에서 `className`이 어떻게 생성되는지, `generateId`를 생성하는 카운터 함수의 존재는 절대 잊지 못할 것 같다. 감사합니다. 🥹
+- 이번 문제를 발견하고 해결하기 위해 서치하면서, 수박 겉핥기로만 알 것 같았던(그러니까 클라이언트랑 서버랑 서로 다른 `className`을 갖게된 건 알았는데 도대체 왜?) 부분을 이해할 수 있었다.  
+  그리고 Next.js 프레임워크가 인기를 얻으면서 서버 사이드 환경에서의 성능 및 기타 문제로 인해 런타임 CSS-in-JS를 더 이상 권장하지않는 이유를 체감하게 되었다.
+- Next.js 13 버전을 사용하고 해당 이슈를 겪은 덕분에 공식 문서를 열심히 읽게 되었다.  
+  (사실 문제를 해결하기 위해 많은 검색과 적용을 해보았지만 대부분 Next.js 12 이전 버전의 방법이었다.)
+- 참고 자료의 설명이 자세한 편이라 styled-components에서 `className`이 어떻게 생성되는지 동작원리에 대해 편하게 이해할 수 있었다. 감사합니다😊
 - 라이브러리를 깊게 파고드는 것이 과연 당장 필요한 일이 아닐 수도 있지만(결국 새로운 라이브러리는 계속 나오니까..) 좋은 공부가 되었다.
-- 사실 문제를 해결하기 위해 많은 검색과 적용을 해보았지만 대부분 Next.js 12 이전 버전의 방법이었다. 아무튼 현재(2024년 상반기 중) 이 문제를 발견하게 된다면 styled-components를 사용하지 마시고 CSS modules를 사용하거나 공식문서의 도움을 받아보세요!
 - 기록하면서 확인해보려고 해당 이슈를 만들어 낸 코드와 해결 코드를 stackblitz에 올려두었다.  
   [🔗 이슈 프로젝트](https://stackblitz.com/edit/stackblitz-starters-yxcqye?file=README.md) [🔗 해결 프로젝트](https://stackblitz.com/edit/stackblitz-starters-pzfeg3?file=README.md)
 
@@ -174,5 +175,6 @@ Next.js 공식문서에 따르면 서버 컴포넌트와 맞지 않는 styled-co
 ### 참고 자료
 
 [Next.js 공식 문서: CSS-in-JS](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components)  
-[styled-components가 동작하는 과정](https://shiwoo.dev/posts/next-13-and-css-in-js#styled-components%EA%B0%80-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94-%EA%B3%BC%EC%A0%95) + Next.js에서 styled-components를 적용했을 때 스타일이 깜빡이는 이유를 자세히 알 수 있었다.  
+[styled-components가 동작하는 과정](https://shiwoo.dev/posts/next-13-and-css-in-js#styled-components%EA%B0%80-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94-%EA%B3%BC%EC%A0%95)  
+👉 Next.js에서 styled-components를 적용했을 때 스타일이 깜빡이는 이유도 자세히 알 수 있다.  
 [Next.js + styled-components에서 Prop `className` did not match가 발생하는 이유와 해결 방법](https://blog.shift.moe/2021/01/02/prop-classname-did-not-match/)
