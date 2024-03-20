@@ -96,6 +96,9 @@ const global = css`
     *:not(pre) > code[class*='language-'] {
       background: transparent;
     }
+    mark {
+      background: ${theme.PALETTE.yellow};
+    }
   }
 
   ::-webkit-scrollbar {
