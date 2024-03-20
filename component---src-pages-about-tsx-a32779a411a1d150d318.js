@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[49],{2766:function(t,e,a){a.r(e),a.d(e,{default:function(){return u}});var i=a(3883),r=a(5694),s=a(917);function u(t){let{data:{site:{siteMetadata:{title:e,description:a,siteUrl:u}},file:{childImageSharp:{gatsbyImageData:l},publicURL:n}}}=t;return(0,s.tZ)(i.Z,{title:e,description:a,url:u,image:n},(0,s.tZ)(r.Z,{profileImage:l}),"about")}}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-a32779a411a1d150d318.js.map
