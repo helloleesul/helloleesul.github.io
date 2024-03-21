@@ -36,7 +36,7 @@ counter++;
 const componentId = hash(counter);
 ```
 
-styled-components는 `styled` 함수로 만든 컴포넌트마다 `generateId` 함수를 이용해 고유한 ID를 생성하는데, 전역 카운터를 하나 두고 컴포넌트 하나를 처리할 때마다 증가시켜 가면서 생성된다.
+styled-components는 `styled` 함수로 만든 컴포넌트마다 [🔗`generateId` 함수](https://github.com/styled-components/styled-components/blob/1c17a0f919c7bfe36f4d55bd13f4262d6288f2e5/packages/styled-components/src/models/StyledComponent.js#L35)를 이용해 고유한 ID를 생성하는데, 전역 카운터를 하나 두고 컴포넌트 하나를 처리할 때마다 증가시켜 가면서 생성된다.
 
 ```js
 const className = hash(componentId + evaluatedCSS);
@@ -52,7 +52,7 @@ const [generatedClassName, setGeneratedClassName] = useState(className);
 
 마지막으로 state를 스타일시트로 변환하는 과정을 거쳐 생성된 스타일시트를 `<style>` 요소로 만들어 DOM에 주입한다.
 
-**이러한 과정을 거쳐 styled-components는 <mark>자바스크립트 코드가 실행되는 환경(Client)</mark> 에 동적으로 스타일을 생성하고 적용된다.**
+**즉, styled-components는 <mark>자바스크립트 코드가 실행되는 환경(Client)</mark> 에 동적으로 스타일을 생성하고 적용된다.**
 
 ---
 
@@ -63,7 +63,7 @@ const [generatedClassName, setGeneratedClassName] = useState(className);
 
 Next.js는 서버 컴포넌트 및 서버 사이드 렌더링(SSR)을 기본 환경으로 지원하는 프레임워크이다. SEO검색 엔진 최적화 등을 위해 처음 페이지를 로드할 때는 서버에서 렌더해 오지만, 페이지에서 링크를 클릭해 다른 페이지로 넘어갈 때는 CSR로 페이지를 렌더한다.
 
-때문에 Next.js에서 페이지의 초기 로딩 시 Server에서 렌더링된 `className`과 이후에 Client에서 렌더링된 `className`의 경우, 컴포넌트가 생성되는 순서에 따라 같은 컴포넌트이더라도 다른 식별자가 붙을 수 있게 되면서 클래스명이 서로 달라지게 된다.
+때문에 Next.js에서 페이지의 초기 로딩, 또는 새로 고침 시 Server에서 렌더링된 `className`과 이후에 Client에서 렌더링된 `className`의 경우, 컴포넌트가 생성되는 순서에 따라 같은 컴포넌트이더라도 다른 식별자가 붙을 수 있게 되면서 클래스명이 서로 달라지게 된다.
 
 - 초기 로딩 시 **SSR** 렌더링된 컴포넌트의 **className A**
   ![](https://i.imgur.com/0toAsr3.png)
@@ -71,7 +71,7 @@ Next.js는 서버 컴포넌트 및 서버 사이드 렌더링(SSR)을 기본 환
   ![](https://i.imgur.com/NX3T8QK.png)
 
 - **CSR** 렌더링된 컴포넌트에서 새로고침 시  
-  초기에 **SSR** 렌더링되며 생성된 **className A**의 식별자를 갖게 되면서 스타일이 깨짐
+  이전에 **SSR** 렌더링되며 생성됐던 **className A**의 식별자를 갖게 되면서 스타일이 깨짐
   ![](https://i.imgur.com/cFqNb18.png)
   ![](https://i.imgur.com/UqOlIou.png)
 
@@ -115,20 +115,30 @@ Next.js 공식문서에 따르면 서버 컴포넌트와 맞지 않는 styled-co
    }: {
      children: React.ReactNode;
    }) {
-     // Only create stylesheet once with lazy initial state
-     // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+     // styledComponentsStyleSheet라는 상태 변수를 초기화
+     // ServerStyleSheet 인스턴스를 보관
      const [styledComponentsStyleSheet] = useState(
        () => new ServerStyleSheet(),
      );
 
+     // 서버 측에서 HTML이 DOM에 삽입될 때마다 호출되는 로직을 처리
      useServerInsertedHTML(() => {
+       // getStyleElement()를 호출하여 스타일 요소를 가져옴
        const styles = styledComponentsStyleSheet.getStyleElement();
+       // instance.clearTag()를 호출하여 이전에 생성된 스타일 태그를 제거
        styledComponentsStyleSheet.instance.clearTag();
        return <>{styles}</>;
      });
 
-     if (typeof window !== 'undefined') return <>{children}</>;
+     // CSR일 때 그대로 반환
+     if (typeof window !== 'undefined') {
+       console.log('CSR');
+       return <>{children}</>;
+     }
 
+     // SSR일 때
+     // 새로운 스타일 요소가 서버 측에서 삽입될 때마다 이전 스타일이 지워지고 새로운 스타일이 적용
+     console.log('SSR');
      return (
        <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
          {children}
@@ -161,14 +171,14 @@ Next.js 공식문서에 따르면 서버 컴포넌트와 맞지 않는 styled-co
 
 ## 마치며
 
-- 이번 문제를 발견하고 해결하기 위해 서치하면서, 수박 겉핥기로만 알 것 같았던(그러니까 클라이언트랑 서버랑 서로 다른 `className`을 갖게된 건 알았는데 도대체 왜?) 부분을 이해할 수 있었다.  
-  그리고 Next.js 프레임워크가 인기를 얻으면서 서버 사이드 환경에서의 성능 및 기타 문제로 인해 런타임 CSS-in-JS를 더 이상 권장하지않는 이유를 체감하게 되었다.
+- 이번 문제를 발견하고 해결하기 위해 서치하면서, 수박 겉핥기로만 알 것 같았던(그러니까 클라이언트랑 서버랑 서로 다른 `className`을 갖게된 건 알았는데 도대체 왜?) 부분을 이해할 수 있었다.
+- Next.js 프레임워크가 인기를 얻으면서 서버 사이드 환경에서의 성능 및 기타 문제로 인해 런타임 CSS-in-JS를 더 이상 권장하지않는 이유를 체감하게 되었다.
 - Next.js 13 버전을 사용하고 해당 이슈를 겪은 덕분에 공식 문서를 열심히 읽게 되었다.  
-  (사실 문제를 해결하기 위해 많은 검색과 적용을 해보았지만 대부분 Next.js 12 이전 버전의 방법이었다.)
-- 참고 자료의 설명이 자세한 편이라 styled-components에서 `className`이 어떻게 생성되는지 동작원리에 대해 편하게 이해할 수 있었다. 감사합니다😊
+  (문제를 해결하기 위해 많은 검색과 적용을 해보았지만 대부분 Next.js 12 이전 버전의 방법이었다.)
+- 참고 자료 설명이 정말 잘되어있어서 styled-components에서 `className`이 어떻게 생성되는지 동작원리에 대해 빠르게 이해할 수 있었다. 감사합니다😊
 - 라이브러리를 깊게 파고드는 것이 과연 당장 필요한 일이 아닐 수도 있지만(결국 새로운 라이브러리는 계속 나오니까..) 좋은 공부가 되었다.
 - 기록하면서 확인해보려고 해당 이슈를 만들어 낸 코드와 해결 코드를 stackblitz에 올려두었다.  
-  [🔗 이슈 프로젝트](https://stackblitz.com/edit/stackblitz-starters-yxcqye?file=README.md) [🔗 해결 프로젝트](https://stackblitz.com/edit/stackblitz-starters-pzfeg3?file=README.md)
+  [🔗이슈 프로젝트](https://stackblitz.com/edit/stackblitz-starters-yxcqye?file=README.md) [🔗해결 프로젝트](https://stackblitz.com/edit/stackblitz-starters-pzfeg3?file=README.md)
 
 ---
 
