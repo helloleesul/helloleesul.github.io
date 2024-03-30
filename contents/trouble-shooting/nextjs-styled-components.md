@@ -177,8 +177,7 @@ Next.js 공식문서에 따르면 서버 컴포넌트와 맞지 않는 styled-co
   (문제를 해결하기 위해 많은 검색과 적용을 해보았지만 대부분 Next.js 12 이전 버전의 방법이었다.)
 - 참고 자료 설명이 정말 잘되어있어서 styled-components에서 `className`이 어떻게 생성되는지 동작원리에 대해 빠르게 이해할 수 있었다. 감사합니다😊
 - 라이브러리를 깊게 파고드는 것이 과연 당장 필요한 일이 아닐 수도 있지만(결국 새로운 라이브러리는 계속 나오니까..) 좋은 공부가 되었다.
-- 기록하면서 확인해보려고 해당 이슈를 만들어 낸 코드와 해결 코드를 stackblitz에 올려두었다.  
-  [🔗이슈 프로젝트](https://stackblitz.com/edit/stackblitz-starters-yxcqye?file=README.md) [🔗해결 프로젝트](https://stackblitz.com/edit/stackblitz-starters-pzfeg3?file=README.md)
+- 기록하면서 확인해보려고 [해당 이슈를 만들어 낸 코드](https://stackblitz.com/edit/stackblitz-starters-yxcqye?file=README.md)와 [해결 코드](https://stackblitz.com/edit/stackblitz-starters-pzfeg3?file=README.md)를 stackblitz에 올려두었다.
 
 ---
 
