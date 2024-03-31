@@ -188,9 +188,9 @@ reducers는 action creator를 자동으로 만들어준다.</p>
 <hr>
 <h2 id="정리하며" style="position:relative;">정리하며<a href="#%EC%A0%95%EB%A6%AC%ED%95%98%EB%A9%B0" aria-label="정리하며 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill="#a0aec0" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <ul>
-<li><strong>UI ➡️ 비동기 ➡️ 저장소 ➡️ UI</strong><br>
+<li><strong>UI(비동기 함수 + reducers) ➡️ 저장소 ➡️ UI</strong><br>
 기존에는 RTK의 비동기 처리 기능을 사용하지 않고 ui 컴포넌트 내에서 서버에 데이터를 요청하는 비동기 함수를 일일히 작성하고 데이터를 가져와서 store를 업데이트 시키는 구조였다면,</li>
-<li><strong>UI ➡️ 저장소(비동기) ➡️ UI</strong><br>
+<li><strong>UI ➡️ 저장소(createAsyncThunk + extraReducers) ➡️ UI</strong><br>
 createAsyncThunk를 통해서 서버에서 데이터 가져와서 store에 저장하고, ui는 store를 구독해놓고, 데이터가 바뀌면 ui도 자동으로 변경되는 구조로 컴포넌트 외부에서 비동기 처리를 할 수 있기 때문에 관심사 분리가 가능해졌다.</li>
 </ul>
 <hr>
