@@ -142,9 +142,9 @@ export const authSlice = createSlice({
 
 ## 정리하며
 
-- **UI ➡️ 비동기 ➡️ 저장소 ➡️ UI**  
+- **UI(비동기 함수 + reducers) ➡️ 저장소 ➡️ UI**  
   기존에는 RTK의 비동기 처리 기능을 사용하지 않고 ui 컴포넌트 내에서 서버에 데이터를 요청하는 비동기 함수를 일일히 작성하고 데이터를 가져와서 store를 업데이트 시키는 구조였다면,
-- **UI ➡️ 저장소(비동기) ➡️ UI**  
+- **UI ➡️ 저장소(createAsyncThunk + extraReducers) ➡️ UI**  
   createAsyncThunk를 통해서 서버에서 데이터 가져와서 store에 저장하고, ui는 store를 구독해놓고, 데이터가 바뀌면 ui도 자동으로 변경되는 구조로 컴포넌트 외부에서 비동기 처리를 할 수 있기 때문에 관심사 분리가 가능해졌다.
 
 ---
