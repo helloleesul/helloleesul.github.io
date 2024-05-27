@@ -3,7 +3,7 @@ date: '2024-05-16'
 title: '컴포넌트가 unmount될 때 애니메이션을 구현하고 싶었다.'
 categories: ['개발']
 summary: '인프런 워밍업 클럽 스터디 1기 FE - 과제'
-thumbnail: './inflearn-warmup-club-study.png'
+thumbnail: './component-unmount-animation.jpg'
 ---
 
 > 과제를 수행하며 고민하고, 깨닫게 된 점들을 기록합니다.  
